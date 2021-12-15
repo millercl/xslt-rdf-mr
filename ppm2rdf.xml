@@ -4,6 +4,7 @@
  xmlns="http://www.w3.org/1999/XSL/Transform"
  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
  >
+ <output doctype-system="rdf:RDF" />
  <template match="/" >
   <rdf:RDF >
   </rdf:RDF>
