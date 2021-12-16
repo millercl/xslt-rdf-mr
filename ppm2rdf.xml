@@ -5,7 +5,12 @@
  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
  >
  <template match="/" >
-  <text disable-output-escaping="yes" >&lt;!DOCTYPE rdf:RDF &gt;</text>
+  <text disable-output-escaping="yes" >
+&lt;!DOCTYPE rdf:RDF [
+    &lt;!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'&gt;
+]&gt;
+
+</text>
   <rdf:RDF >
   </rdf:RDF>
  </template>
