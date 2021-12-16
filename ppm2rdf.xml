@@ -4,12 +4,12 @@
  xmlns="http://www.w3.org/1999/XSL/Transform"
  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
  >
+ <output indent="yes" />
  <template match="/" >
   <text disable-output-escaping="yes" >
 &lt;!DOCTYPE rdf:RDF [
     &lt;!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'&gt;
 ]&gt;
-
 </text>
   <rdf:RDF >
   </rdf:RDF>
