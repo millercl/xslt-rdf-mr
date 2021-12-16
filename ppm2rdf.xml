@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="us-ascii" ?>
-<transform
+<xsl:transform
  version="3.0"
- xmlns="http://www.w3.org/1999/XSL/Transform"
- xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
  >
- <output indent="yes" />
- <template match="/" >
-  <text disable-output-escaping="yes" >
+ <xsl:output indent="yes" />
+ <xsl:template match="/" >
+  <xsl:text disable-output-escaping="yes" >
 &lt;!DOCTYPE rdf:RDF [
     &lt;!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'&gt;
 ]&gt;
-</text>
-  <rdf:RDF >
-  </rdf:RDF>
- </template>
-</transform>
+</xsl:text>
+  <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+  </RDF>
+ </xsl:template>
+</xsl:transform>
