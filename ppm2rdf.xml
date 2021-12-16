@@ -4,7 +4,7 @@
  xmlns="http://www.w3.org/1999/XSL/Transform"
  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
  >
- <output indent="yes" />
+ <output indent="yes" encoding="UTF-16" />
  <template match="/" >
   <text disable-output-escaping="yes" >
 &lt;!DOCTYPE rdf:RDF [
