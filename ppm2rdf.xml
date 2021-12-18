@@ -4,9 +4,14 @@
  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
  >
  <xsl:output indent="yes" />
+ <xsl:variable name="rdfns" >
+   http://www.w3.org/1999/02/22-rdf-syntax-ns#
+ </xsl:variable>
+ <xsl:variable name="rdf" select="normalize-space($rdfns)" />
+ <xsl:variable name="n">1</xsl:variable>
  <xsl:template match="/" >
   <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-   <Description about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1" >
+   <Description about="{$rdf}_{$n}" >
     <_1 >153715</_1>
    </Description>
   </RDF>
