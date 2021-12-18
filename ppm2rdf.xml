@@ -5,12 +5,10 @@
  >
  <xsl:output indent="yes" />
  <xsl:template match="/" >
-  <xsl:text disable-output-escaping="yes" >
-&lt;!DOCTYPE rdf:RDF [
-    &lt;!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'&gt;
-]&gt;
-</xsl:text>
   <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+   <Description about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1" >
+    <_1 >153715</_1>
+   </Description>
   </RDF>
  </xsl:template>
 </xsl:transform>
