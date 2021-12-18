@@ -3,7 +3,10 @@
  version="3.0"
  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
  >
- <xsl:output indent="yes" />
+ <xsl:output indent="yes" use-character-maps="entity" />
+ <xsl:character-map name="entity" >
+  <xsl:output-character character="&#x03c6;" string="&amp;rdf;" />
+ </xsl:character-map>
  <xsl:template match="/" >
   <xsl:text disable-output-escaping="yes" >
 &lt;!DOCTYPE rdf:RDF [
