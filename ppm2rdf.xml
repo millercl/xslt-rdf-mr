@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="us-ascii" ?>
-<xsl:stylesheet
+<xsl:transform
  version="3.0"
  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
- xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
- exclude-result-prefixes="rdf"
  >
  <xsl:output indent="yes" />
  <xsl:variable name="rdfns" >
@@ -12,10 +10,10 @@
  <xsl:variable name="rdf" select="normalize-space($rdfns)" />
  <xsl:variable name="n">1</xsl:variable>
  <xsl:template match="/" >
-  <rdf:RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-   <rdf:Description rdf:about="{$rdf}_{$n}" >
-    <rdf:_1 >153715</rdf:_1>
-   </rdf:Description>
-  </rdf:RDF>
+  <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+   <Description about="{$rdf}_{$n}" >
+    <_1 >153715</_1>
+   </Description>
+  </RDF>
  </xsl:template>
-</xsl:stylesheet>
+</xsl:transform>
