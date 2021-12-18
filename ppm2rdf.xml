@@ -13,7 +13,7 @@
     &lt;!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'&gt;
 ]&gt;
 </xsl:text>
-  <RDF xmlns="&#x03c6;" >
+  <RDF xmlns="&amp;rdf;" >
   </RDF>
  </xsl:template>
 </xsl:transform>
