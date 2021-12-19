@@ -12,7 +12,7 @@
  <xsl:template match="/" >
   <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
    <Description about="{$rdf}_{$n}" >
-    <_1 >153715</_1>
+    <xsl:element name="_{$n}" >153715</xsl:element>
    </Description>
   </RDF>
  </xsl:template>
