@@ -3,17 +3,30 @@
  version="3.0"
  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
  >
- <xsl:output indent="yes" />
+ <xsl:output indent="no" />
  <xsl:variable name="rdfns" >
-   http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  http://www.w3.org/1999/02/22-rdf-syntax-ns#
  </xsl:variable>
  <xsl:variable name="rdf" select="normalize-space($rdfns)" />
  <xsl:variable name="n">1</xsl:variable>
  <xsl:template match="/" >
-  <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-   <Description about="{$rdf}_{$n}" >
-    <xsl:element name="_{$n}" >153715</xsl:element>
-   </Description>
-  </RDF>
+  <xsl:text disable-output-escaping="yes" >
+   &lt;!DOCTYPE rdf:RDF [
+   &lt;!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'&gt;
+   ]&gt;
+  </xsl:text>
+  <xsl:text disable-output-escaping="yes">
+   &lt;RDF xmlns="&amp;rdf;"&gt;
+  </xsl:text>
+  <xsl:text disable-output-escaping="yes">
+   &lt;Description about="&amp;rdf;_1"&gt;
+  </xsl:text>
+  <xsl:element name="_{$n}" >153715</xsl:element>
+  <xsl:text disable-output-escaping="yes">
+   &lt;/Description&gt;
+  </xsl:text>
+  <xsl:text disable-output-escaping="yes">
+   &lt;/RDF&gt;
+  </xsl:text>
  </xsl:template>
 </xsl:transform>
