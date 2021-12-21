@@ -18,8 +18,9 @@
   <xsl:text disable-output-escaping="yes">
    &lt;RDF xmlns="&amp;rdf;"&gt;
   </xsl:text>
-  <xsl:text disable-output-escaping="yes">
-   &lt;Description about="&amp;rdf;_1"&gt;
+  <xsl:text disable-output-escaping="yes" >
+    &lt;Description about="&amp;rdf;_</xsl:text><xsl:value-of select="$n" />
+  <xsl:text disable-output-escaping="yes" >"&gt;
   </xsl:text>
   <xsl:element name="_{$n}" >153715</xsl:element>
   <xsl:text disable-output-escaping="yes">
