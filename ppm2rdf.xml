@@ -9,7 +9,15 @@
  </xsl:variable>
  <xsl:variable name="rdf" select="normalize-space($rdfns)" />
  <xsl:variable name="n" >1</xsl:variable>
- <xsl:template match="/" >
+ <xsl:template name="initial-template" match="/" >
+   <xsl:message>init</xsl:message>
+   <xsl:apply-templates select="unparsed-text-lines('i.txt')" />
+ </xsl:template>
+ <xsl:template match=".[starts-with(.,'j')]" >
+   <xsl:value-of select="." ></xsl:value-of>
+ </xsl:template>
+ <xsl:template name="demo" >
+   <xsl:message>demo</xsl:message>
   <xsl:text disable-output-escaping="yes" expand-text="yes">
    &lt;!DOCTYPE rdf:RDF [
    &lt;!ENTITY rdf '{$rdf}'&gt;
