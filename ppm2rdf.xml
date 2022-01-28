@@ -4,19 +4,17 @@
  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
  >
  <xsl:output indent="no" />
- <xsl:variable name="rdfns" >
-  http://www.w3.org/1999/02/22-rdf-syntax-ns#
- </xsl:variable>
- <xsl:variable name="rdf" select="normalize-space($rdfns)" />
+ <xsl:variable name="rdf" static="yes"
+  select="'http://www.w3.org/1999/02/22-rdf-syntax-ns#'" />
  <xsl:variable name="n" >1</xsl:variable>
- <xsl:template name="initial-template" match="/" >
+ <xsl:template name="initial-template" >
    <xsl:message>init</xsl:message>
    <xsl:apply-templates select="unparsed-text-lines('i.txt')" />
  </xsl:template>
  <xsl:template match=".[starts-with(.,'j')]" >
    <xsl:value-of select="." ></xsl:value-of>
  </xsl:template>
- <xsl:template name="demo" >
+ <xsl:template name="demo" match="/" >
    <xsl:message>demo</xsl:message>
   <xsl:text disable-output-escaping="yes" expand-text="yes">
    &lt;!DOCTYPE rdf:RDF [
