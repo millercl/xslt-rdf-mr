@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="us-ascii" ?>
-<xsl:transform
+<transform
  version="3.0"
- xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+ xmlns="http://www.w3.org/1999/XSL/Transform"
  >
- <xsl:output indent="no" />
- <xsl:variable name="rdf" static="yes"
+ <output indent="no" />
+ <variable name="rdf" static="yes"
   select="'http://www.w3.org/1999/02/22-rdf-syntax-ns#'" />
- <xsl:variable name="n" >1</xsl:variable>
- <xsl:template name="initial-template" >
-   <xsl:message>init</xsl:message>
-   <xsl:apply-templates select="unparsed-text-lines('i.txt')" />
- </xsl:template>
- <xsl:template match=".[starts-with(.,'j')]" >
-   <xsl:value-of select="." ></xsl:value-of>
- </xsl:template>
- <xsl:template name="demo" match="/" >
-   <xsl:message>demo</xsl:message>
-  <xsl:text disable-output-escaping="yes" expand-text="yes">
+ <variable name="n" >1</variable>
+ <template name="initial-template" >
+   <message>init</message>
+   <apply-templates select="unparsed-text-lines('i.txt')" />
+ </template>
+ <template match=".[starts-with(.,'j')]" >
+   <value-of select="." ></value-of>
+ </template>
+ <template name="demo" match="/" >
+   <message>demo</message>
+  <text disable-output-escaping="yes" expand-text="yes">
    &lt;!DOCTYPE rdf:RDF [
    &lt;!ENTITY rdf '{$rdf}'&gt;
    ]&gt;
-  </xsl:text>
-  <xsl:text disable-output-escaping="yes" >
+  </text>
+  <text disable-output-escaping="yes" >
    &lt;RDF xmlns="&amp;rdf;"&gt;
-  </xsl:text>
-  <xsl:text disable-output-escaping="yes" expand-text="yes" >
+  </text>
+  <text disable-output-escaping="yes" expand-text="yes" >
    &lt;Description about="&amp;rdf;_{$n}"&gt;
-  </xsl:text>
-  <xsl:element name="_{$n}" >153715</xsl:element>
-  <xsl:text disable-output-escaping="yes" >
+  </text>
+  <element name="_{$n}" >153715</element>
+  <text disable-output-escaping="yes" >
    &lt;/Description&gt;
-  </xsl:text>
-  <xsl:text disable-output-escaping="yes" >
+  </text>
+  <text disable-output-escaping="yes" >
    &lt;/RDF&gt;
-  </xsl:text>
- </xsl:template>
-</xsl:transform>
+  </text>
+ </template>
+</transform>

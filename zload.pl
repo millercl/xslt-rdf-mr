@@ -10,7 +10,7 @@
 load( File ) :-
     file_base_name( File, Basename ) ,
     file_name_extension( Name, ".xml", Basename ) ,
-    rdf_load( File, [ base_uri( Name ), silent( true ) ] ) .
+    rdf_load( File, [ base_uri( Name ), silent( false ) ] ) .
 
 main( [] ) :-
     load( "o.xml" ) .
