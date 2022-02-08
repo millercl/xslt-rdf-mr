@@ -27,7 +27,7 @@
   <text disable-output-escaping="yes" expand-text="yes" >
    &lt;Description about="&amp;rdf;_{$n}"&gt;
   </text>
-  <element name="_{$n}" >153715</element>
+  <element name="_{$n}" namespace="" >153715</element>
   <text disable-output-escaping="yes" >
    &lt;/Description&gt;
   </text>
