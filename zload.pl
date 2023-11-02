@@ -44,3 +44,10 @@ hexrgb( R , G , B ) -->
     Y ,
     { format(string( Z ) ,'~|~`0t~16r~2|', [ B ] ) } ,
     Z .
+
+h( S , P , R , G , B ) :-
+    rdfs_container_membership_property( S ) ,
+    rdfs_container_membership_property( P ) ,
+    rdf( S , P , L@hexrgb ) ,
+    string_chars( L , X ) ,
+    phrase( hexrgb( R , G , B ) , X ) .
