@@ -32,3 +32,16 @@ hexrgb( R , G , B ) -->
     { R is 16 * D1 + D2 } ,
     { G is 16 * D3 + D4 } ,
     { B is 16 * D5 + D6 } .
+
+hexrgb( R , G , B ) -->
+    { integer( R ) , R >= 0 , R =< 255 } ,
+    { integer( G ) , G >= 0 , G =< 255 } ,
+    { integer( B ) , B >= 0 , B =< 255 } ,
+    { string_codes( '#' , W ) } ,
+    W ,
+    { format(string( X ) ,'~|~`0t~16r~2|', [ R ] ) } ,
+    X ,
+    { format(string( Y ) ,'~|~`0t~16r~2|', [ G ] ) } ,
+    Y ,
+    { format(string( Z ) ,'~|~`0t~16r~2|', [ B ] ) } ,
+    Z .
