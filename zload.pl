@@ -51,3 +51,13 @@ h( S , P , R , G , B ) :-
     rdf( S , P , L@hexrgb ) ,
     string_chars( L , X ) ,
     phrase( hexrgb( R , G , B ) , X ) .
+
+t( R , G , B ) -->
+    { integer( R ) , R >= 0 , R =< 15 } ,
+    { integer( G ) , G >= 0 , G =< 15 } ,
+    { integer( B ) , B >= 0 , B =< 15 } ,
+    { string_codes( '#' , W ) } ,
+    W ,
+    xinteger( R ) ,
+    xinteger( G ) ,
+    xinteger( B ) .
