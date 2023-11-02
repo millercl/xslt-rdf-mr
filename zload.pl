@@ -61,3 +61,13 @@ t( R , G , B ) -->
     xinteger( R ) ,
     xinteger( G ) ,
     xinteger( B ) .
+
+wsr( B , N ) :-
+    integer( B ) , B >= 0 , B =< 255 ,
+    var( N ) ,
+    N is div( B , 16 ) .
+
+wsr( B , N ) :-
+    var( B ) ,
+    integer( N ) , N >=0 , N =< 15 ,
+    B is N * 16 + N .
