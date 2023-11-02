@@ -6,7 +6,6 @@
 :- use_module( library( semweb/rdf_portray ) ) .
 :- use_module( library( semweb/rdf_zlib_plugin ) ) .
 :- rdf_portray_as( prefix:id ) .
-:- set_prolog_flag(double_quotes, chars).
 
 load( File ) :-
     file_base_name( File, Basename ) ,
