@@ -73,3 +73,16 @@ wsr( B , N ) :-
     integer( N ) , N >=0 , N =< 15 ,
     B is N * 16 + N ,
     ! .
+
+update(S,P,RB,GB,BB) :-
+    wsr(RB,RN) ,
+    wsr(GB,GN) ,
+    wsr(BB,BN) ,
+    phrase( t(RN,GN,BN) , LNSC ) ,
+    phrase( hexrgb(RB,GB,BB) , LBSC ) ,
+    string_codes( LN , LNSC ) ,
+    string_codes( LB , LBSC ) ,
+    rdfs_container_membership_property( N , S ) ,
+    rdfs_container_membership_property( M , P ) ,
+    rdf_assert( N , M , LN@t ) ,
+    rdf_retractall( N , M , LB@hexrgb ) .
