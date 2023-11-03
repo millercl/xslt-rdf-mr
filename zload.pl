@@ -97,3 +97,9 @@ scan( X , Y ) :-
 
 coor( L ) :-
     findall( c(X,Y) , scan( X, Y ) , L ) .
+
+:- use_module(library(http/html_write)).
+
+print :-
+    open( "index.html" , write , Stream ) ,
+    print_html( Stream , [ '<html/>' ] ) .
