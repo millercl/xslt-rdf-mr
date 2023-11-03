@@ -102,4 +102,5 @@ coor( L ) :-
 
 print :-
     open( "index.html" , write , Stream ) ,
-    print_html( Stream , [ '<html/>' ] ) .
+    print_html( Stream , [ '<html/>' ] ) ,
+    close( Stream ) .
