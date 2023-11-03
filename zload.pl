@@ -86,3 +86,14 @@ update(S,P,RB,GB,BB) :-
     rdfs_container_membership_property( M , P ) ,
     rdf_assert( N , M , LN@t ) ,
     rdf_retractall( N , M , LB@hexrgb ) .
+
+scan( X , Y ) :-
+    findall( Y , ( rdf_predicate( P ) , rdfs_container_membership_property( P , Y ) ) , BY ) ,
+    max_list( BY , MY ) ,
+    findall( X , ( rdf_subject( S ) , rdfs_container_membership_property( S , X ) ) , BX ) ,
+    max_list( BX , MX ) ,
+    between( 1, MY, Y ) ,
+    between( 1, MX, X ) .
+
+coor( L ) :-
+    findall( c(X,Y) , scan( X, Y ) , L ) .
