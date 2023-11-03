@@ -46,9 +46,9 @@ hexrgb( R , G , B ) -->
     Z .
 
 h( S , P , R , G , B ) :-
-    rdfs_container_membership_property( S ) ,
-    rdfs_container_membership_property( P ) ,
-    rdf( S , P , L@hexrgb ) ,
+    rdfs_container_membership_property( N , S ) ,
+    rdfs_container_membership_property( M , P ) ,
+    rdf( N , M , L@hexrgb ) ,
     string_chars( L , X ) ,
     phrase( hexrgb( R , G , B ) , X ) .
 
