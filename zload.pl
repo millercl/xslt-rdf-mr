@@ -18,61 +18,52 @@ main( [] ) :-
 :- initialization( main, main ) .
 
 hexrgb( R , G , B ) -->
-    { var( R ) } ,
-    { var( G ) } ,
-    { var( B ) } ,
+    { var( R ) } , % type safety determines direction:
+    { var( G ) } , % this way is uninstantiated toward parsing.
+    { var( B ) } , % get integers out.
     [ '#' ] ,
-    xdigit( D1 ) ,
-    xdigit( D2 ) ,
-    xdigit( D3 ) ,
-    xdigit( D4 ) ,
-    xdigit( D5 ) ,
-    xdigit( D6 ) ,
-    { R is 16 * D1 + D2 } ,
-    { G is 16 * D3 + D4 } ,
-    { B is 16 * D5 + D6 } .
+    xdigit( D1 ) , xdigit( D2 ) , % six hexadecimal digits next.
+    xdigit( D3 ) , xdigit( D4 ) ,
+    xdigit( D5 ) , xdigit( D6 ) ,
+    { R is 16 * D1 + D2 } , % perserve significant digit values .
+    { G is 16 * D3 + D4 } , % base-16 math.
+    { B is 16 * D5 + D6 } . % goes back to predicate signature.
 
 hexrgb( R , G , B ) -->
-    { integer( R ) , R >= 0 , R =< 255 } ,
-    { integer( G ) , G >= 0 , G =< 255 } ,
-    { integer( B ) , B >= 0 , B =< 255 } ,
+    { integer( R ) , R >= 0 , R =< 255 } , % type safety determines direction:
+    { integer( G ) , G >= 0 , G =< 255 } , % this way is instantiated toward
+    { integer( B ) , B >= 0 , B =< 255 } , % generation; get strings out.
     { string_codes( '#' , W ) } ,
-    W ,
-    { format(string( X ) ,'~|~`0t~16r~2|', [ R ] ) } ,
-    X ,
-    { format(string( Y ) ,'~|~`0t~16r~2|', [ G ] ) } ,
-    Y ,
-    { format(string( Z ) ,'~|~`0t~16r~2|', [ B ] ) } ,
-    Z .
+    { format(string( X ) ,'~|~`0t~16r~2|', [ R ] ) } , % leading zeros hexadecimal
+    { format(string( Y ) ,'~|~`0t~16r~2|', [ G ] ) } , % comes from signature
+    { format(string( Z ) ,'~|~`0t~16r~2|', [ B ] ) } , % does not work w/ xdigit.
+    W, X, Y, Z .
 
 h( S , P , R , G , B ) :-
-    rdf( N , M , L@hexrgb ) ,
-    rdfs_container_membership_property( N , S ) ,
-    rdfs_container_membership_property( M , P ) ,
-    string_chars( L , X ) ,
-    phrase( hexrgb( R , G , B ) , X ) .
+    rdf( N , M , L@hexrgb ) , % this is a performance quirk, rdf query goes first.
+    rdfs_container_membership_property( N , S ) , % constrain subject to _n .
+    rdfs_container_membership_property( M , P ) , % constrain predicate to _n .
+    string_chars( L , X ) , % this is a workaround for the rdf11 library .
+    phrase( hexrgb( R , G , B ) , X ) . % call the dcg parse on the langtag.
 
 t( R , G , B ) -->
     { integer( R ) , R >= 0 , R =< 15 } ,
     { integer( G ) , G >= 0 , G =< 15 } ,
     { integer( B ) , B >= 0 , B =< 15 } ,
     { string_codes( '#' , W ) } ,
-    W ,
-    xinteger( R ) ,
-    xinteger( G ) ,
-    xinteger( B ) .
+    W , xinteger( R ) , xinteger( G ) , xinteger( B ) .
 
 wsr( B , N ) :-
-    integer( B ) , B >= 0 , B =< 255 ,
-    var( N ) ,
+    integer( B ) , B >= 0 , B =< 255 , % instantiated
+    var( N ) , % uninstantiated
     N is div( B , 16 ) ,
-    ! .
+    ! . % improve arithmetic termination, don't try another way.
 
 wsr( B , N ) :-
-    var( B ) ,
-    integer( N ) , N >=0 , N =< 15 ,
+    var( B ) , % opposite direction, uninstantiated
+    integer( N ) , N >=0 , N =< 15 , % instantiated, no double uninstant.
     B is N * 16 + N ,
-    ! .
+    ! . % improve arithmetic termination.
 
 update(S,P,RB,GB,BB) :-
     wsr(RB,RN) ,
@@ -101,6 +92,7 @@ coor( L ) :-
 :- use_module(library(http/html_write)).
 
 print :-
+    html_set_options( [ dialect(html5) , doctype(html) ] ) ,
     open( "index.html" , write , Stream ) ,
     print_html( Stream , [ '<html/>' ] ) ,
     close( Stream ) .
