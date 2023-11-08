@@ -89,10 +89,23 @@ scan( X , Y ) :-
 coor( L ) :-
     findall( c(X,Y) , scan( X, Y ) , L ) .
 
+:- use_module(library(http/http_open)).
 :- use_module(library(http/html_write)).
+:- use_module(library(sgml)). % this has load_html/3
 
 print :-
     html_set_options( [ dialect(html5) , doctype(html) ] ) ,
     open( "index.html" , write , Stream ) ,
     print_html( Stream , [ '<html/>' ] ) ,
+    close( Stream ) .
+
+temp( D , SVG ) :-
+    load_html( "template.html" , D , [] ) ,
+    D = [ element( html , [] , H ) ] ,
+    H = [ element( head , [] , _H ) ,
+          element( body , [] , SVG ) ] .
+
+save( D ) :-
+    open( "index.html" , write , Stream ) ,
+    html_write( Stream, D , [] ) ,
     close( Stream ) .
