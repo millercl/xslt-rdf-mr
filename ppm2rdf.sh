@@ -1,6 +1,7 @@
 #!/bin/bash
 a=$(cat <<SETA
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with ppm2rdf.sh (https://github.com/millercl/xslt-rdf-mr) -->
 <!DOCTYPE rdf:RDF [
  <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
  ]>
