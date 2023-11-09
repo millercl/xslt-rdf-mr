@@ -93,12 +93,6 @@ coor( L ) :-
 :- use_module(library(http/html_write)).
 :- use_module(library(sgml)). % this has load_html/3
 
-print :-
-    html_set_options( [ dialect(html5) , doctype(html) ] ) ,
-    open( "index.html" , write , Stream ) ,
-    print_html( Stream , [ '<html/>' ] ) ,
-    close( Stream ) .
-
 temp( D , SVG ) :-
     load_html( "template.html" , D , [] ) ,
     D = [ element( html , [] , H ) ] ,
@@ -109,3 +103,24 @@ save( D ) :-
     open( "index.html" , write , Stream ) ,
     html_write( Stream, D , [] ) ,
     close( Stream ) .
+
+attributes_svg -->
+    { findall( Y , ( rdf_predicate( P ) , rdfs_container_membership_property( P , Y ) ) , BY ) ,
+      max_list( BY , MY )  ,
+      findall( X , ( rdf_subject( S ) , rdfs_container_membership_property( S , X ) ) , BX ) ,
+      max_list( BX , MX ) ,
+      string_concat( "0 0 " , MX , V ) ,
+      string_concat( V , " " , B ) ,
+      string_concat( B , MY , VB ) } ,
+    [ height=MY ,
+      version='1.1' ,
+      viewBox=VB ,
+      width=MX ,
+      xmlns='http://www.w3.org/2000/svg' ] .
+
+rect( c(X,Y) , T ) -->
+    { rdfs_container_membership_property(S,X) ,
+      rdfs_container_membership_property(P,Y) ,
+      rdf(S,P,L@t) ,
+      string_concat( "fill:" , L , C ) ,
+      string_concat( C , ";" , Fill ) } .
