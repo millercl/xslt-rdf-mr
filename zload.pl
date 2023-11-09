@@ -104,10 +104,9 @@ attributes_svg -->
       string_concat( "0 0 " , MX , V ) ,
       string_concat( V , " " , B ) ,
       string_concat( B , MY , VB ) } ,
-    [ height=MY ,
-      version='1.1' ,
+    [ height='100%' ,
       viewBox=VB ,
-      width=MX ,
+      width='100%' ,
       xmlns='http://www.w3.org/2000/svg' ] .
 
 rect( c(X,Y) , T ) -->
