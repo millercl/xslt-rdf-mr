@@ -89,19 +89,11 @@ scan( X , Y ) :-
 coor( L ) :-
     findall( c(X,Y) , scan( X, Y ) , L ) .
 
-:- use_module(library(http/http_open)).
-:- use_module(library(http/html_write)).
-:- use_module(library(sgml)). % this has load_html/3
-
-temp( D , SVG ) :-
-    load_html( "template.html" , D , [] ) ,
-    D = [ element( html , [] , H ) ] ,
-    H = [ element( head , [] , _H ) ,
-          element( body , [] , SVG ) ] .
+:- use_module(library(sgml)).
 
 save( D ) :-
-    open( "index.html" , write , Stream ) ,
-    html_write( Stream, D , [] ) ,
+    open( "jb.svg" , write , Stream ) ,
+    xml_write( Stream, D , [] ) ,
     close( Stream ) .
 
 attributes_svg -->
