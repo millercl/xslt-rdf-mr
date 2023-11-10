@@ -91,11 +91,6 @@ coor( L ) :-
 
 :- use_module(library(sgml)).
 
-save( D ) :-
-    open( "jb.svg" , write , Stream ) ,
-    xml_write( Stream, D , [] ) ,
-    close( Stream ) .
-
 attributes_svg -->
     { findall( Y , ( rdf_predicate( P ) , rdfs_container_membership_property( P , Y ) ) , BY ) ,
       max_list( BY , MY )  ,
@@ -128,3 +123,9 @@ element_svg -->
     { phrase( attributes_svg , A ) ,
       phrase( rect , E ) } ,
     [ element( svg , A , E ) ] .
+
+svg( Filename ) :-
+    open( Filename , write , Stream ) ,
+    phrase( element_svg , D ) ,
+    xml_write( Stream, D , [] ) ,
+    close( Stream ) .
