@@ -109,9 +109,13 @@ attributes_svg -->
       width='100%' ,
       xmlns='http://www.w3.org/2000/svg' ] .
 
-rect( c(X,Y) , T ) -->
-    { rdfs_container_membership_property(S,X) ,
-      rdfs_container_membership_property(P,Y) ,
-      rdf(S,P,L@t) ,
-      string_concat( "fill:" , L , C ) ,
-      string_concat( C , ";" , Fill ) } .
+:- use_module( library( apply ) ) .
+
+re( c(Xo,Yo) , element( rect, A , [] ) ) :-
+    rdfs_container_membership_property( S , Xo ) ,
+    rdfs_container_membership_property( P , Yo ) ,
+    rdf( S , P , L@hexrgb ) ,
+    string_concat( "fill:" , L , Style ) ,
+    Xk is Xo-1 ,
+    Yk is Yo-1 ,
+    A=[ style=Style , width=1 , height=1 , x=Xk , y=Yk ] .
