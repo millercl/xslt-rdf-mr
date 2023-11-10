@@ -119,3 +119,12 @@ re( c(Xo,Yo) , element( rect, A , [] ) ) :-
     Xk is Xo-1 ,
     Yk is Yo-1 ,
     A=[ style=Style , width=1 , height=1 , x=Xk , y=Yk ] .
+
+rect -->
+    { coor( L ) , maplist( re , L , D ) } ,
+    D .
+
+element_svg -->
+    { phrase( attributes_svg , A ) ,
+      phrase( rect , E ) } ,
+    [ element( svg , A , E ) ] .
