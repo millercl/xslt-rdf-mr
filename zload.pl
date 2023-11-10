@@ -78,18 +78,18 @@ update(S,P,RB,GB,BB) :-
     rdf_assert( N , M , LN@t ) ,
     rdf_retractall( N , M , LB@hexrgb ) .
 
+% generate alternatives for rdf coordinates in order .
 scan( X , Y ) :-
     findall( Y , ( rdf_predicate( P ) , rdfs_container_membership_property( P , Y ) ) , BY ) ,
-    max_list( BY , MY ) ,
+    max_list( BY , MY ) , % list of actual axis coordinates BY is potentially unordered.
     findall( X , ( rdf_subject( S ) , rdfs_container_membership_property( S , X ) ) , BX ) ,
-    max_list( BX , MX ) ,
-    between( 1, MY, Y ) ,
-    between( 1, MX, X ) .
+    max_list( BX , MX ) , % likewise with BX, take only the maximum for between/3.
+    between( 1, MY, Y ) , % the x/y order is sigificant to sorting.
+    between( 1, MX, X ) . % between/3 assumes (_n,_m) is not sparse nor duplicated.
 
-coor( L ) :-
-    findall( c(X,Y) , scan( X, Y ) , L ) .
-
-:- use_module(library(sgml)).
+% collect the ordered alternative from scan/2.
+coor( L ) :- % the term rewrite 'c(x,y)' is for legibity ;
+    findall( c(X,Y) , scan( X, Y ) , L ) . % but it will also pass to re/2 .
 
 attributes_svg -->
     { findall( Y , ( rdf_predicate( P ) , rdfs_container_membership_property( P , Y ) ) , BY ) ,
@@ -104,26 +104,33 @@ attributes_svg -->
       width='100%' ,
       xmlns='http://www.w3.org/2000/svg' ] .
 
-:- use_module( library( apply ) ) .
+:- use_module( library( apply ) ) . % for maplist/3
 
-re( c(Xo,Yo) , element( rect, A , [] ) ) :-
-    rdfs_container_membership_property( S , Xo ) ,
+% rewrite a single coordinate term as a svg:rect element .
+% coordinate(x,y) |-> element( rect , [x,y,...] , [sub-elements] ) .
+re( c(Xo,Yo) , element( rect, A , [] ) ) :- % []: there are no sub-elements .
+    rdfs_container_membership_property( S , Xo ) , % e.g: ( rdf:'_1' , 1 ) .
     rdfs_container_membership_property( P , Yo ) ,
-    rdf( S , P , L@hexrgb ) ,
-    string_concat( "fill:" , L , Style ) ,
-    Xk is Xo-1 ,
-    Yk is Yo-1 ,
+    rdf( S , P , L@hexrgb ) , % bind L to the coordinated object type rdf:langString .
+    string_concat( "fill:" , L , Style ) , % inline CSS attribute value .
+    Xk is Xo-1 , % convert between cardinal and ordinal coordinates .
+    Yk is Yo-1 , % e.g: (0,0) <- (1,1) .
     A=[ style=Style , width=1 , height=1 , x=Xk , y=Yk ] .
+% attribute list is a (sub)term of xml_write/3 format .
+% result in signature concats the attributes with the tag .
 
+% map all ordered coordinates into svg:rect body .
 rect -->
     { coor( L ) , maplist( re , L , D ) } ,
-    D .
+    D . % this list is xml_write/3 format .
 
+% compose svg tag, attributes, and sub-elements .
 element_svg -->
     { phrase( attributes_svg , A ) ,
       phrase( rect , E ) } ,
-    [ element( svg , A , E ) ] .
+    [ element( svg , A , E ) ] . % this list is xml_write/3 format .
 
+:- use_module(library(sgml)). % for xml_write/3 .
 svg( Filename ) :-
     open( Filename , write , Stream ) ,
     phrase( element_svg , D ) ,
