@@ -85,7 +85,10 @@ scan( X , Y ) :-
     findall( X , ( rdf_subject( S ) , rdfs_container_membership_property( S , X ) ) , BX ) ,
     max_list( BX , MX ) , % likewise with BX, take only the maximum for between/3.
     between( 1, MY, Y ) , % the x/y order is sigificant to sorting.
-    between( 1, MX, X ) . % between/3 assumes (_n,_m) is not sparse nor duplicated.
+    between( 1, MX, X ) ,
+    rdfs_container_membership_property( Pc , Y ) ,
+    rdfs_container_membership_property( Sc , X ) ,
+    rdf( Sc , Pc , _O@hexrgb ) .
 
 % collect the ordered alternative from scan/2.
 coor( L ) :- % the term rewrite 'c(x,y)' is for legibity ;
@@ -102,6 +105,7 @@ attributes_svg -->
     [ height='100%' ,
       viewBox=VB ,
       width='100%' ,
+      style="background-image: linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(135deg, #ccc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(135deg, transparent 75%, #ccc 75%);background-size: 24px 24px;background-position: 0 0, 12px 0, 12px -12px, 0px 12px;" ,
       xmlns='http://www.w3.org/2000/svg' ] .
 
 :- use_module( library( apply ) ) . % for maplist/3
