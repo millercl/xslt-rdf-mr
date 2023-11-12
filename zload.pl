@@ -115,7 +115,11 @@ re( c(Xo,Yo) , element( rect, A , [] ) ) :- % []: there are no sub-elements .
     string_concat( "fill:" , L , Style ) , % inline CSS attribute value .
     Xk is Xo-1 , % convert between cardinal and ordinal coordinates .
     Yk is Yo-1 , % e.g: (0,0) <- (1,1) .
-    A=[ style=Style , width=1 , height=1 , x=Xk , y=Yk ] .
+    C=[ style=Style , width=1 , height=1 , x=Xk , y=Yk ] ,
+    string_chars( L , X ) , % this is a workaround for the rdf11 library .
+    phrase( hexrgb( R , G , B ) , X ) ,
+    rect_class(R,G,B,E) ,
+    append( C , E , A ) .
 % attribute list is a (sub)term of xml_write/3 format .
 % result in signature concats the attributes with the tag .
 
@@ -136,3 +140,17 @@ svg( Filename ) :-
     phrase( element_svg , D ) ,
     xml_write( Stream, D , [] ) ,
     close( Stream ) .
+
+rect_class( R, G, B, A ) :-
+    equilateral( R, G, B ) , A=[class="e"], ! ;
+    \+equilateral(R,G,B) , isosceles(R,G,B) , A=[class="i"], ! ;
+    A=[] .
+
+equilateral( R, G, B ) :-
+    R is G ,
+    G is B .
+
+isosceles( R, G, B ) :-
+    R is G , ! ;
+    R is B , ! ;
+    G is B , ! .
