@@ -65,18 +65,18 @@ wsr( B , N ) :-
     B is N * 16 + N ,
     ! . % improve arithmetic termination.
 
-update(S,P,RB,GB,BB) :-
-    wsr(RB,RN) ,
-    wsr(GB,GN) ,
-    wsr(BB,BN) ,
-    phrase( t(RN,GN,BN) , LNSC ) ,
-    phrase( hexrgb(RB,GB,BB) , LBSC ) ,
+update(X,Y,RR,GG,BB) :-
+    wsr(RR,R) ,
+    wsr(GG,G) ,
+    wsr(BB,B) ,
+    phrase( t(R,G,B) , LNSC ) ,
+    phrase( hexrgb(RR,GG,BB) , LBSC ) ,
     string_codes( LN , LNSC ) ,
     string_codes( LB , LBSC ) ,
-    rdfs_container_membership_property( N , S ) ,
-    rdfs_container_membership_property( M , P ) ,
-    rdf_assert( N , M , LN@t ) ,
-    rdf_retractall( N , M , LB@hexrgb ) .
+    rdfs_container_membership_property( S , X ) ,
+    rdfs_container_membership_property( P , Y ) ,
+    rdf_retractall( S , P , LB@hexrgb ) ,
+    rdf_assert( S , P , LN@t ) .
 
 % generate alternatives for rdf coordinates in order .
 scan( X , Y ) :-
@@ -158,3 +158,8 @@ isosceles( R, G, B ) :-
     R is G , ! ;
     R is B , ! ;
     G is B , ! .
+
+retract( X, Y ) :-
+    rdfs_container_membership_property( S, X ) ,
+    rdfs_container_membership_property( P, Y ) ,
+    rdf_retractall( S, P, _O@hexrgb ) .
