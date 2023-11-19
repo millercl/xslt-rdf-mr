@@ -163,3 +163,15 @@ retract( X, Y ) :-
     rdfs_container_membership_property( S, X ) ,
     rdfs_container_membership_property( P, Y ) ,
     rdf_retractall( S, P, _O@hexrgb ) .
+
+rn( R, G, B, rgb(RR,GG,BB) ) :-
+    var(RR) , var(GG) , var(BB) ,
+    integer(R) , integer(G) , integer(B) , ! ,
+    RR is R/255 , GG is G/255 , BB is B/255 .
+
+rn( R, G, B, rgb(RR,GG,BB) ) :-
+    number(RR) , number(GG) , number(BB) ,
+    var(R) , var(G) , var(B) , ! ,
+    round( RR*255 , R ) ,
+    round( GG*255 , G ) ,
+    round( BB*255 , B ) .
