@@ -175,3 +175,31 @@ rn( R, G, B, rgb(RR,GG,BB) ) :-
     round( RR*255 , R ) ,
     round( GG*255 , G ) ,
     round( BB*255 , B ) .
+
+hsvc( rgb(0,0,0) , hsv(nan,nan,0) ) .
+
+hsvc( rgb(R,G,B) , hsv(nan,0,V) ) :-
+    integer(R) , integer(G) , integer(B) ,
+    var(V) , ! ,
+    max_list( [R,G,B] , V ) ,
+    min_list( [R,G,B] , X ) ,
+    V=X .
+
+hsvc( rgb(R,G,B) , hsv(H,S,V) ) :-
+    number(R) , number(G) , number(B) ,
+    var(H) , var(S) , var(V) ,
+    max_list( [R,G,B] , V ) ,
+    min_list( [R,G,B] , X ) ,
+    S is (V-X)/V ,
+    O is (V-R)/(V-X) ,
+    L is (V-G)/(V-X) ,
+    Y is (V-B)/(V-X) ,
+    hsvd(R,G,B,V,X,O,L,Y,U) ,
+    H is U/6.
+
+hsvd( R, G,_B, V, X,_O,_L, Y, U ) :- R =V , G =X , ! , U is 5+Y .
+hsvd( R, G,_B, V, X,_O, L,_Y, U ) :- R =V , G\=X , ! , U is 1-L .
+hsvd(_R, G, B, V, X, O,_L,_Y, U ) :- G =V , B =X , ! , U is 1+O .
+hsvd(_R, G, B, V, X,_O,_L, Y, U ) :- G =V , B\=X , ! , U is 3-Y .
+hsvd( R, G,_B, V, X,_O, L,_Y, U ) :- G\=V , R =X , ! , U is 3+L .
+hsvd( R, G,_B, V, X, O,_L,_Y, U ) :- G\=V , R\=X , ! , U is 5-O .
