@@ -164,6 +164,7 @@ retract( X, Y ) :-
     rdfs_container_membership_property( P, Y ) ,
     rdf_retractall( S, P, _O@hexrgb ) .
 
+% https://dl.acm.org/doi/10.1145/965139.807361 p.14
 rn( R, G, B, rgb(RR,GG,BB) ) :-
     var(RR) , var(GG) , var(BB) ,
     integer(R) , integer(G) , integer(B) , ! ,
@@ -175,16 +176,16 @@ rn( R, G, B, rgb(RR,GG,BB) ) :-
     round( RR*255 , R ) ,
     round( GG*255 , G ) ,
     round( BB*255 , B ) .
-
+% 1) V=0
 hsvc( rgb(0,0,0) , hsv(nan,nan,0) ) .
-
+% 3) C=0
 hsvc( rgb(R,G,B) , hsv(nan,0,V) ) :-
     integer(R) , integer(G) , integer(B) ,
     var(V) , ! ,
     max_list( [R,G,B] , V ) ,
     min_list( [R,G,B] , X ) ,
     V=X .
-
+% 4) & 6)
 hsvc( rgb(R,G,B) , hsv(H,S,V) ) :-
     number(R) , number(G) , number(B) ,
     var(H) , var(S) , var(V) ,
@@ -196,7 +197,7 @@ hsvc( rgb(R,G,B) , hsv(H,S,V) ) :-
     Y is (V-B)/(V-X) ,
     hsvd(R,G,B,V,X,O,L,Y,U) ,
     H is U/6.
-
+% 5)
 hsvd( R, G,_B, V, X,_O,_L, Y, U ) :- R =V , G =X , ! , U is 5+Y .
 hsvd( R, G,_B, V, X,_O, L,_Y, U ) :- R =V , G\=X , ! , U is 1-L .
 hsvd(_R, G, B, V, X, O,_L,_Y, U ) :- G =V , B =X , ! , U is 1+O .
