@@ -180,7 +180,7 @@ rn( R, G, B, rgb(RR,GG,BB) ) :-
 hsvc( rgb(0,0,0) , hsv(nan,nan,0) ) .
 % 3) C=0
 hsvc( rgb(R,G,B) , hsv(nan,0,V) ) :-
-    integer(R) , integer(G) , integer(B) ,
+    number(R) , number(G) , number(B) ,
     var(V) , ! ,
     max_list( [R,G,B] , V ) ,
     min_list( [R,G,B] , X ) ,
