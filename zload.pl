@@ -181,10 +181,10 @@ hsvc( rgb(0,0,0) , hsv(nan,nan,0) ) .
 % 3) C=0
 hsvc( rgb(R,G,B) , hsv(nan,0,V) ) :-
     number(R) , number(G) , number(B) ,
-    var(V) , ! ,
+    var(V) ,
     max_list( [R,G,B] , V ) ,
     min_list( [R,G,B] , X ) ,
-    V=X .
+    V=X , ! .
 % 4) & 6)
 hsvc( rgb(R,G,B) , hsv(H,S,V) ) :-
     number(R) , number(G) , number(B) ,
