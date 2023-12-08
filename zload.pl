@@ -79,20 +79,21 @@ update(X,Y,RR,GG,BB) :-
     rdf_assert( S , P , LN@t ) .
 
 % generate alternatives for rdf coordinates in order .
-scan( X , Y ) :-
+% left to right, top to bottom .
+lrtb( X , Y ) :-
     findall( Y , ( rdf_predicate( P ) , rdfs_container_membership_property( P , Y ) ) , BY ) ,
     max_list( BY , MY ) , % list of actual axis coordinates BY is potentially unordered.
     findall( X , ( rdf_subject( S ) , rdfs_container_membership_property( S , X ) ) , BX ) ,
     max_list( BX , MX ) , % likewise with BX, take only the maximum for between/3.
     between( 1, MY, Y ) , % the x/y order is sigificant to sorting.
     between( 1, MX, X ) ,
-    rdfs_container_membership_property( Pc , Y ) ,
-    rdfs_container_membership_property( Sc , X ) ,
-    rdf( Sc , Pc , _O@hexrgb ) .
+    rdfs_container_membership_property( P , Y ) ,
+    rdfs_container_membership_property( S , X ) ,
+    rdf( S , P , _O@hexrgb ) .
 
-% collect the ordered alternative from scan/2.
-coor( L ) :- % the term rewrite 'c(x,y)' is for legibity ;
-    findall( c(X,Y) , scan( X, Y ) , L ) . % but it will also pass to re/2 .
+% collect the ordered alternative from lrtb/2.
+coor( L ) :- % the term rewrite 'o(x,y)' is for legibity ;
+    findall( o(X,Y) , lrtb( X, Y ) , L ) . % but it will also pass to re/2 .
 
 attributes_svg -->
     { findall( Y , ( rdf_predicate( P ) , rdfs_container_membership_property( P , Y ) ) , BY ) ,
@@ -112,7 +113,7 @@ attributes_svg -->
 
 % rewrite a single coordinate term as a svg:rect element .
 % coordinate(x,y) |-> element( rect , [x,y,...] , [sub-elements] ) .
-re( c(Xo,Yo) , element( rect, A , [] ) ) :- % []: there are no sub-elements .
+re( o(Xo,Yo) , element( rect, A , [] ) ) :- % []: there are no sub-elements .
     rdfs_container_membership_property( S , Xo ) , % e.g: ( rdf:'_1' , 1 ) .
     rdfs_container_membership_property( P , Yo ) ,
     rdf( S , P , L@hexrgb ) , % bind L to the coordinated object type rdf:langString .
