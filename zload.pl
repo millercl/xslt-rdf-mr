@@ -21,6 +21,7 @@ hexrgb( R , G , B ) -->
     { var( R ) } , % type safety determines direction:
     { var( G ) } , % this way is uninstantiated toward parsing.
     { var( B ) } , % get integers out.
+    ! ,
     [ '#' ] ,
     xdigit( D1 ) , xdigit( D2 ) , % six hexadecimal digits next.
     xdigit( D3 ) , xdigit( D4 ) ,
@@ -33,6 +34,7 @@ hexrgb( R , G , B ) -->
     { integer( R ) , R >= 0 , R =< 255 } , % type safety determines direction:
     { integer( G ) , G >= 0 , G =< 255 } , % this way is instantiated toward
     { integer( B ) , B >= 0 , B =< 255 } , % generation; get strings out.
+    ! ,
     { string_codes( '#' , W ) } ,
     { format(string( X ) ,'~|~`0t~16r~2|', [ R ] ) } , % leading zeros hexadecimal
     { format(string( Y ) ,'~|~`0t~16r~2|', [ G ] ) } , % comes from signature
