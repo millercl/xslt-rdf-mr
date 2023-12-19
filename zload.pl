@@ -214,3 +214,14 @@ dcltpm( R, G, B, D, C, L, T, P, M ) :-
     T is R - X ,
     P is G - X ,
     M is B - X .
+
+udcl(X,Y,RR,GG,BB) :-
+    dcltpm(RR,GG,BB,D,C,L,_T,_P,_M) ,
+    phrase( hexrgb(D,C,L) , LNSC ) ,
+    phrase( hexrgb(RR,GG,BB) , LBSC ) ,
+    string_codes( LN , LNSC ) ,
+    string_codes( LB , LBSC ) ,
+    rdfs_container_membership_property( S , X ) ,
+    rdfs_container_membership_property( P , Y ) ,
+    rdf_retractall( S , P , LB@hexrgb ) ,
+    rdf_assert( S , P , LN@hexrgb ) .
