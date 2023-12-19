@@ -207,3 +207,10 @@ hsvd(_R, G, B, V, X, O,_L,_Y, U ) :- G =V , B =X , ! , U is 1+O .
 hsvd(_R, G, B, V, X,_O,_L, Y, U ) :- G =V , B\=X , ! , U is 3-Y .
 hsvd( R, G,_B, V, X,_O, L,_Y, U ) :- G\=V , R =X , ! , U is 3+L .
 hsvd( R, G,_B, V, X, O,_L,_Y, U ) :- G\=V , R\=X , ! , U is 5-O .
+% p.13
+dcltpm( R, G, B, D, C, L, T, P, M ) :-
+    min_list( [R,G,B] , X ) ,
+    D is X , C is X , L is X ,
+    T is R - X ,
+    P is G - X ,
+    M is B - X .
