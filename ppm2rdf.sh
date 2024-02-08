@@ -5,7 +5,7 @@ a=$(cat <<SETA
 <!DOCTYPE rdf:RDF [
  <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
  ]>
-<RDF xmlns="&rdf;">
+<RDF xmlns="&rdf;" xml:lang="hexrgb" >
 SETA
 )
 l=1
@@ -37,7 +37,7 @@ do
   esac
   if [ $m -eq 2 ]
   then
-   echo " <Description about=\"&rdf;_$x\" > <_$y xml:lang=\"hexrgb\" >#$r$g$b</_$y> </Description>"
+   echo " <Description about=\"&rdf;_$x\" > <_$y >#$r$g$b</_$y> </Description>"
    if [ $(($x+1)) -gt $w ]
    then
     ((y++))
