@@ -5,7 +5,7 @@ a=$(cat <<SETA
 <!DOCTYPE rdf:RDF [
  <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
  ]>
-<RDF xmlns="&rdf;" xml:lang="hexrgb" >
+<RDF xmlns="&rdf;" xml:lang="${1:-zxx}" >
 SETA
 )
 l=1
