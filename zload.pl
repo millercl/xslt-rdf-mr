@@ -6,6 +6,7 @@
 :- use_module( library( semweb/rdf_portray ) ) .
 :- use_module( library( semweb/rdf_zlib_plugin ) ) .
 :- rdf_portray_as( prefix:id ) .
+:- rdf_register_prefix( tiff, 'http://ns.adobe.com/tiff/1.0/' ) .
 
 load( File ) :-
     file_base_name( File, Basename ) ,
@@ -98,10 +99,8 @@ coor( L ) :- % the term rewrite 'o(x,y)' is for legibity ;
     findall( o(X,Y) , lrtb( X, Y ) , L ) . % but it will also pass to re/2 .
 
 attributes_svg -->
-    { findall( Y , ( rdf_predicate( P ) , rdfs_container_membership_property( P , Y ) ) , BY ) ,
-      max_list( BY , MY )  ,
-      findall( X , ( rdf_subject( S ) , rdfs_container_membership_property( S , X ) ) , BX ) ,
-      max_list( BX , MX ) ,
+    { rdf( _, tiff:'ImageLength', MY^^xsd:int ) ,
+      rdf( _, tiff:'ImageWidth', MX^^xsd:int ) ,
       string_concat( "0 0 " , MX , V ) ,
       string_concat( V , " " , B ) ,
       string_concat( B , MY , VB ) } ,

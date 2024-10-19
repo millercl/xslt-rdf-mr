@@ -4,13 +4,16 @@ a=$(cat <<SETA
 <!-- Created with ppm2rdf.sh (https://github.com/millercl/xslt-rdf-mr) -->
 <!DOCTYPE rdf:RDF [
  <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+ <!ENTITY tiff 'http://ns.adobe.com/tiff/1.0/'>
+ <!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#'>
  ]>
-<RDF xmlns="&rdf;" xml:lang="${1:-zxx}" >
+<RDF xmlns="&rdf;" xmlns:tiff="&tiff;" xml:lang="${1:-zxx}" >
 SETA
 )
 l=1
 m=0
 w=0
+h=0
 r=0
 g=0
 b=0
@@ -25,15 +28,20 @@ then
 fi
 while read line
 do
- [[ $l -eq 1 && $line != "P3" ]] && exit
+ if [[ $l -eq 1 && $line -eq "P3" ]]
+ then
+  echo "$a"
+ fi
  if [[ $l -eq 3 ]]
  then
   w=`echo $line | cut -d ' ' -f 1`
+  h=`echo $line | cut -d ' ' -f 2`
+  echo " <Description about=\"\" > <tiff:ImageWidth datatype=\"&xsd;int\" >$w</tiff:ImageWidth> </Description>"
+  echo " <Description about=\"\" > <tiff:ImageLength datatype=\"&xsd;int\" >$h</tiff:ImageLength> </Description>"
  fi
  if [ $l -eq 4 ]
  then
   [[ $line != "255" ]] && exit
-  echo "$a"
  fi
  if [ $l -gt 4 ]
  then
