@@ -16,6 +16,13 @@ g=0
 b=0
 x=1
 y=1
+t=true
+z=171
+if [ ! -z $2 ]
+then
+ t=false
+ z=$2
+fi
 while read line
 do
  [[ $l -eq 1 && $line != "P3" ]] && exit
@@ -37,7 +44,10 @@ do
   esac
   if [ $m -eq 2 ]
   then
-   echo " <Description about=\"&rdf;_$x\" > <_$y >#$r$g$b</_$y> </Description>"
+   if [ $t = true ] || (( 0x$r == 255 && 0x$g == 0 && 0x$b >= $z ))
+   then
+    echo " <Description about=\"&rdf;_$x\" > <_$y >#$r$g$b</_$y> </Description>"
+   fi
    if [ $(($x+1)) -gt $w ]
    then
     ((y++))
