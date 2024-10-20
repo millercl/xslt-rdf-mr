@@ -49,7 +49,7 @@ h( S , P , R , G , B ) :-
     string_chars( L , X ) , % this is a workaround for the rdf11 library .
     phrase( hexrgb( R , G , B ) , X ) . % call the dcg parse on the langtag.
 
-t( R , G , B ) -->
+qtc( R , G , B ) -->
     { integer( R ) , R >= 0 , R =< 15 } ,
     { integer( G ) , G >= 0 , G =< 15 } ,
     { integer( B ) , B >= 0 , B =< 15 } ,
@@ -72,14 +72,14 @@ update(X,Y,RR,GG,BB) :-
     wsr(RR,R) ,
     wsr(GG,G) ,
     wsr(BB,B) ,
-    phrase( t(R,G,B) , LNSC ) ,
+    phrase( qtc(R,G,B) , LNSC ) ,
     phrase( hexrgb(RR,GG,BB) , LBSC ) ,
     string_codes( LN , LNSC ) ,
     string_codes( LB , LBSC ) ,
     rdfs_container_membership_property( S , X ) ,
     rdfs_container_membership_property( P , Y ) ,
     rdf_retractall( S , P , LB@hexrgb ) ,
-    rdf_assert( S , P , LN@t ) .
+    rdf_assert( S , P , LN@qtc ) .
 
 % generate alternatives for rdf coordinates in order .
 % left to right, top to bottom .
