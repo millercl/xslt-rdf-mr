@@ -396,3 +396,18 @@ transpose( o(X,Y) , t(Y,X) ).
 metric( t(QY,QX) , m(XY,XX) ) :-
     XY is QY-0.5 ,
     XX is QX-0.5 .
+
+lri( QT , XM ) :-
+    coor( XL, QT ) ,
+    maplist( transpose, XL, XT ) ,
+    maplist( metric, XT, XM ) .
+
+csv( QM , ZZ ) :-
+    open( ZZ , write , XZ ) ,
+    phrase( csv_(QM), XD ) ,
+    string_codes( XS, XD ) ,
+    write( XZ, XS ) ,
+    close( XZ ) .
+
+csv_([]) --> [] .
+csv_([m(QY,QX)|QT]) -->  float(QY), "," , float(QX), "\n" , csv_(QT) .
