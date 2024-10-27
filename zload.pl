@@ -42,8 +42,8 @@ hexrgb( R , G , B ) -->
     { format(string( Z ) ,'~|~`0t~16r~2|', [ B ] ) } , % does not work w/ xdigit.
     W, X, Y, Z .
 
-h( S , P , R , G , B ) :-
-    rdf( N , M , L@hexrgb ) , % this is a performance quirk, rdf query goes first.
+h( S , P , R , G , B , T ) :-
+    rdf( N , M , L@T ) , % this is a performance quirk, rdf query goes first.
     rdfs_container_membership_property( N , S ) , % constrain subject to _n .
     rdfs_container_membership_property( M , P ) , % constrain predicate to _n .
     string_chars( L , X ) , % this is a workaround for the rdf11 library .
@@ -68,7 +68,7 @@ wsr( B , N ) :-
     B is N * 16 + N ,
     ! . % improve arithmetic termination.
 
-update(X,Y,RR,GG,BB) :-
+update(X,Y,RR,GG,BB,T) :-
     wsr(RR,R) ,
     wsr(GG,G) ,
     wsr(BB,B) ,
@@ -78,12 +78,12 @@ update(X,Y,RR,GG,BB) :-
     string_codes( LB , LBSC ) ,
     rdfs_container_membership_property( S , X ) ,
     rdfs_container_membership_property( P , Y ) ,
-    rdf_retractall( S , P , LB@hexrgb ) ,
+    rdf_retractall( S , P , LB@T ) ,
     rdf_assert( S , P , LN@qtc ) .
 
 % generate alternatives for rdf coordinates in order .
 % left to right, top to bottom .
-lrtb( X , Y ) :-
+lrtb( X , Y , T ) :-
     findall( Y , ( rdf_predicate( P ) , rdfs_container_membership_property( P , Y ) ) , BY ) ,
     max_list( BY , MY ) , % list of actual axis coordinates BY is potentially unordered.
     findall( X , ( rdf_subject( S ) , rdfs_container_membership_property( S , X ) ) , BX ) ,
@@ -92,11 +92,11 @@ lrtb( X , Y ) :-
     between( 1, MX, X ) ,
     rdfs_container_membership_property( P , Y ) ,
     rdfs_container_membership_property( S , X ) ,
-    rdf( S , P , _O@hexrgb ) .
+    rdf( S , P , _O@T ) .
 
-% collect the ordered alternative from lrtb/2.
-coor( L ) :- % the term rewrite 'o(x,y)' is for legibity ;
-    findall( o(X,Y) , lrtb( X, Y ) , L ) . % but it will also pass to re/2 .
+% collect the ordered alternative from lrtb/3.
+coor( L, T ) :- % the term rewrite 'o(x,y)' is for legibity ;
+    findall( o(X,Y) , lrtb( X, Y, T ) , L ) . % but it will also pass to re/3 .
 
 attributes_svg -->
     { rdf( _, tiff:'ImageLength', MY^^xsd:int ) ,
@@ -114,10 +114,10 @@ attributes_svg -->
 
 % rewrite a single coordinate term as a svg:rect element .
 % coordinate(x,y) |-> element( rect , [x,y,...] , [sub-elements] ) .
-re( o(Xo,Yo) , element( rect, A , [] ) ) :- % []: there are no sub-elements .
+re( T, o(Xo,Yo) , element( rect, A , [] ) ) :- % []: there are no sub-elements .
     rdfs_container_membership_property( S , Xo ) , % e.g: ( rdf:'_1' , 1 ) .
     rdfs_container_membership_property( P , Yo ) ,
-    rdf( S , P , L@hexrgb ) , % bind L to the coordinated object type rdf:langString .
+    rdf( S , P , L@T ) , % bind L to the coordinated object type rdf:langString .
     string_concat( "fill:" , L , Style ) , % inline CSS attribute value .
     Xk is Xo-1 , % convert between cardinal and ordinal coordinates .
     Yk is Yo-1 , % e.g: (0,0) <- (1,1) .
@@ -130,20 +130,20 @@ re( o(Xo,Yo) , element( rect, A , [] ) ) :- % []: there are no sub-elements .
 % result in signature concats the attributes with the tag .
 
 % map all ordered coordinates into svg:rect body .
-rect -->
-    { coor( L ) , maplist( re , L , D ) } ,
+rect( T ) -->
+    { coor( L, T ) , maplist( re( T ) , L , D ) } ,
     D . % this list is xml_write/3 format .
 
 % compose svg tag, attributes, and sub-elements .
-element_svg -->
+element_svg( T ) -->
     { phrase( attributes_svg , A ) ,
-      phrase( rect , E ) } ,
+      phrase( rect( T ) , E ) } ,
     [ element( svg , A , E ) ] . % this list is xml_write/3 format .
 
 :- use_module(library(sgml)). % for xml_write/3 .
-svg( Filename ) :-
+svg( T, Filename ) :-
     open( Filename , write , Stream ) ,
-    phrase( element_svg , D ) ,
+    phrase( element_svg( T ) , D ) ,
     xml_write( Stream, D , [] ) ,
     close( Stream ) .
 
@@ -161,10 +161,10 @@ isosceles( R, G, B ) :-
     R is B , ! ;
     G is B , ! .
 
-retract( X, Y ) :-
+retract( X, Y, T ) :-
     rdfs_container_membership_property( S, X ) ,
     rdfs_container_membership_property( P, Y ) ,
-    rdf_retractall( S, P, _O@hexrgb ) .
+    rdf_retractall( S, P, _O@T ) .
 
 % https://dl.acm.org/doi/10.1145/965139.807361 p.14
 rn( R, G, B, rgb(RR,GG,BB) ) :-
@@ -214,7 +214,7 @@ dcltpm( R, G, B, D, C, L, T, P, M ) :-
     P is G - X ,
     M is B - X .
 
-udcl(X,Y,RR,GG,BB) :-
+udcl(X,Y,RR,GG,BB,Tag) :-
     dcltpm(RR,GG,BB,D,C,L,_T,_P,_M) ,
     phrase( hexrgb(D,C,L) , LNSC ) ,
     phrase( hexrgb(RR,GG,BB) , LBSC ) ,
@@ -222,8 +222,8 @@ udcl(X,Y,RR,GG,BB) :-
     string_codes( LB , LBSC ) ,
     rdfs_container_membership_property( S , X ) ,
     rdfs_container_membership_property( P , Y ) ,
-    rdf_retractall( S , P , LB@hexrgb ) ,
-    rdf_assert( S , P , LN@hexrgb ) .
+    rdf_retractall( S , P , LB@Tag ) ,
+    rdf_assert( S , P , LN@Tag ) .
 
 q([81]) --> [81]. % Q
 s([65]) --> [65]. s([66]) --> [66]. % A B

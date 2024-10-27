@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with ppm2rdf.cpp (https://github.com/millercl/xslt-rdf-mr) -->
 <!DOCTYPE rdf:RDF [
  <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
  <!ENTITY tiff 'http://ns.adobe.com/tiff/1.0/'>
  <!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#'>
  ]>
-<RDF xmlns="&rdf;" xmlns:tiff="&tiff;" xml:lang="hexrgb" >
+<RDF xmlns="&rdf;" xmlns:tiff="&tiff;" xml:lang="qgs-939-x-ff00ff" >
  <Description about="" > <tiff:ImageWidth datatype="&xsd;int" >367</tiff:ImageWidth> </Description>
  <Description about="" > <tiff:ImageLength datatype="&xsd;int" >239</tiff:ImageLength> </Description>
  <Description about="&rdf;_193" > <_17 >#ff00ff</_17> </Description>
