@@ -1,1612 +1,243 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <svg
-    height="100%"
-    viewBox="0 0 367 239"
-    width="100%"
-    style="background-image: linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(135deg, #ccc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(135deg, transparent 75%, #ccc 75%);background-size: 24px 24px;background-position: 0 0, 12px 0, 12px -12px, 0px 12px;"
-    xmlns="http://www.w3.org/2000/svg">
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="16"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="17"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="22"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="40"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="41"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="42"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="43"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="44"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="45"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="46"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="47"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="48"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="189"
-      y="49"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="49"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="189"
-      y="50"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="50"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="189"
-      y="51"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="51"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="189"
-      y="52"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="52"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="189"
-      y="53"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="53"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="53"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="189"
-      y="54"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="54"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="54"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="189"
-      y="55"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="55"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="55"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="189"
-      y="56"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="56"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="189"
-      y="57"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="57"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="189"
-      y="58"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="58"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="189"
-      y="59"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="59"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="189"
-      y="64"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="189"
-      y="65"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="65"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="189"
-      y="66"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="66"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="189"
-      y="67"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="67"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="72"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="73"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="73"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="74"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="189"
-      y="75"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="75"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="80"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="81"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="82"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="83"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="84"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="85"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="86"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="87"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="88"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="89"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="90"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="91"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="91"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="92"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="93"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="94"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="95"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="96"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="97"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="98"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="98"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="99"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="99"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="100"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="100"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="101"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="102"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="102"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="103"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="103"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="103"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="104"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="104"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="105"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="105"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="106"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="106"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="107"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="107"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="108"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="108"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="109"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="109"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="110"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="110"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="111"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="112"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="112"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="113"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="113"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="114"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="114"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="115"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="115"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="116"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="116"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="116"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="116"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="117"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="117"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="117"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="118"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="120"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="120"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="121"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="121"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="122"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="122"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="123"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="123"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="124"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="124"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="125"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="126"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="127"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="128"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="190"
-      y="129"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="131"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="132"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="132"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="133"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="134"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="135"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="136"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="137"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="138"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="139"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="140"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="141"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="142"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="143"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="144"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="145"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="147"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="148"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="148"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="149"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="149"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="150"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="150"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="151"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="151"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="156"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="157"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="158"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="159"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="160"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="160"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="161"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="162"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="163"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="164"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="164"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="165"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="169"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="170"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="171"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="172"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="173"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="173"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="174"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="175"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="175"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="176"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="176"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="177"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="178"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="178"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="179"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="179"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="180"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="180"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="181"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="181"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="182"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="182"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="183"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="183"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="184"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="184"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="185"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="185"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="193"
-      y="185"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="186"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="188"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="189"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="190"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="191"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="192"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="193"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="195"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="195"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="196"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="197"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="198"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="199"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="200"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="200"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="201"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="201"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="202"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="202"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="203"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="203"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="204"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="205"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="206"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="206"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="207"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="207"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="209"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="210"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="212"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="191"
-      y="213"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="213"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="217"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="220"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="192"
-      y="221"
-      class="i"/>
-  <rect
-      style="fill:#ff00ff"
-      width="1"
-      height="1"
-      x="194"
-      y="221"
-      class="i"/>
+ height="100%"
+ viewBox="0 0 367 239"
+ width="100%"
+ style="background-image: linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(135deg, #ccc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(135deg, transparent 75%, #ccc 75%);background-size: 24px 24px;background-position: 0 0, 12px 0, 12px -12px, 0px 12px;image-rendering:crisp-edges;"
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:svg="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ >
+ <image width="367" height="239" xlink:href="j239367.png" x="0" y="0" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="16" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="17" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="22" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="40" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="41" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="42" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="43" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="44" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="45" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="46" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="47" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="48" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="189" y="49" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="49" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="189" y="50" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="50" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="189" y="51" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="51" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="189" y="52" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="52" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="189" y="53" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="53" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="53" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="189" y="54" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="54" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="54" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="189" y="55" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="55" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="55" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="189" y="56" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="56" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="189" y="57" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="57" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="189" y="58" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="58" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="189" y="59" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="59" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="189" y="64" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="189" y="65" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="65" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="189" y="66" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="66" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="189" y="67" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="67" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="72" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="73" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="73" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="74" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="189" y="75" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="75" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="80" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="81" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="82" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="83" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="84" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="85" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="86" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="87" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="88" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="89" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="90" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="91" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="91" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="92" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="93" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="94" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="95" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="96" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="97" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="98" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="98" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="99" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="99" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="100" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="100" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="101" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="102" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="102" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="103" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="103" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="103" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="104" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="104" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="105" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="105" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="106" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="106" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="107" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="107" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="108" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="108" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="109" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="109" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="110" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="110" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="111" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="112" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="112" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="113" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="113" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="114" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="114" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="115" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="115" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="116" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="116" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="116" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="116" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="117" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="117" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="117" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="118" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="120" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="120" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="121" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="121" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="122" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="122" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="123" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="123" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="124" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="124" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="125" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="126" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="127" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="128" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="190" y="129" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="131" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="132" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="132" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="133" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="134" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="135" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="136" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="137" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="138" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="139" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="140" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="141" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="142" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="143" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="144" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="145" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="147" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="148" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="148" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="149" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="149" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="150" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="150" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="151" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="151" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="156" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="157" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="158" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="159" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="160" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="160" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="161" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="162" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="163" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="164" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="164" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="165" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="169" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="170" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="171" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="172" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="173" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="173" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="174" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="175" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="175" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="176" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="176" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="177" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="178" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="178" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="179" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="179" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="180" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="180" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="181" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="181" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="182" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="182" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="183" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="183" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="184" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="184" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="185" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="185" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="193" y="185" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="186" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="188" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="189" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="190" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="191" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="192" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="193" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="195" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="195" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="196" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="197" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="198" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="199" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="200" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="200" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="201" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="201" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="202" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="202" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="203" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="203" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="204" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="205" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="206" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="206" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="207" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="207" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="209" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="210" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="212" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="191" y="213" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="213" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="217" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="220" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="192" y="221" />
+ <rect style="fill:#ff00ff" width="1" height="1" x="194" y="221" />
+ <path d="M 190.86129766137,0 L 193.43083007578,239" style="stroke-width:0.2;stroke:#ff00ab;" id="y1" />
+ <path d="M 190.8615078485,0 L 193.43069342467,239" style="stroke-width:0.1;stroke:#004586;" id="y3-oocalc" />
 </svg>
