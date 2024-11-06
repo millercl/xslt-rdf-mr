@@ -411,3 +411,41 @@ csv( QM , ZZ ) :-
 
 csv_([]) --> [] .
 csv_([m(QY,QX)|QT]) -->  float(QY), "," , float(QX), "\n" , csv_(QT) .
+
+qaap( QaaZ , QaaP ) :- sum_list( QaaZ , QaaP ) .
+qaaz( LRI , QaaZ ) :- maplist( qaak , LRI , QaaZ ) .
+qaak( m(XY,XX) , QaaK ) :- QaaK is XY * XX .
+qaax( QaaI , QaaX ) :- sum_list( QaaI , QaaX ) .
+qaai( LRI , QaaI ) :- maplist( qaat , LRI , QaaI ) .
+qaat( m(XY,_X) , QaaT ) :- QaaT is XY .
+qaay( QaaJ , QaaY ) :- sum_list( QaaJ , QaaY ) .
+qaaj( LRI , QaaJ ) :- maplist( qaao , LRI , QaaJ ) .
+qaao( m(_Y,XX) , QaaO ) :- QaaO is XX .
+qaas( QaaU , QaaS ) :- sum_list( QaaU , QaaS ) .
+qaau( LRI , QaaU ) :- maplist( qaae , LRI , QaaU ) .
+qaae( m(XY,_X) , QaaE ) :- QaaE is XY ** 2 .
+qaal( LRI , QaaL ) :- length( LRI , QaaL ) .
+qaaw( QaaX , QaaY , QaaW ) :- QaaW is QaaX * QaaY .
+qaaf( QaaL , QaaP , QaaF ) :- QaaF is QaaL * QaaP .
+qaan( QaaF , QaaW , QaaN ) :- QaaN is QaaF - QaaW .
+qaad( QaaG , QaaV , QaaD ) :- QaaD is QaaG - QaaV .
+qaaa( QaaN , QaaD , QaaA ) :- QaaA is QaaN / QaaD .
+qaag( QaaL , QaaS , QaaG ) :- QaaG is QaaL * QaaS .
+qaav( QaaX , QaaV ) :- QaaV is QaaX ** 2 .
+qaa( LRI , QaaA ) :-
+    qaaz( LRI , QaaZ ) ,
+    qaai( LRI , QaaI ) ,
+    qaaj( LRI , QaaJ ) ,
+    qaau( LRI , QaaU ) ,
+    qaal( LRI , QaaL ) ,
+    qaap( QaaZ , QaaP ) ,
+    qaax( QaaI , QaaX ) ,
+    qaay( QaaJ , QaaY ) ,
+    qaas( QaaU , QaaS ) ,
+    qaaf( QaaL , QaaP , QaaF ) ,
+    qaaw( QaaX , QaaY , QaaW ) ,
+    qaag( QaaL , QaaS , QaaG ) ,
+    qaav( QaaX , QaaV ) ,
+    qaan( QaaF , QaaW , QaaN ) ,
+    qaad( QaaG , QaaV , QaaD ) ,
+    qaaa( QaaN , QaaD , QaaA ) .
