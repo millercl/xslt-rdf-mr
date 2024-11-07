@@ -449,3 +449,24 @@ qaa( LRI , QaaA ) :-
     qaan( QaaF , QaaW , QaaN ) ,
     qaad( QaaG , QaaV , QaaD ) ,
     qaaa( QaaN , QaaD , QaaA ) .
+qabb( QabC , QaaD , QabB ) :- QabB is QabC / QaaD .
+qabc( QabH , QabQ , QabC ) :- QabC is QabH - QabQ .
+qabh( QaaS , QaaY , QabH ) :- QabH is QaaS * QaaY .
+qabq( QaaP , QaaX , QabQ ) :- QabQ is QaaP * QaaX .
+qab( LRI , QabB ) :-
+    qaai( LRI , QaaI ) ,
+    qaaj( LRI , QaaJ ) ,
+    qaal( LRI , QaaL ) ,
+    qaau( LRI , QaaU ) ,
+    qaaz( LRI , QaaZ ) ,
+    qaas( QaaU , QaaS ) ,
+    qaap( QaaZ , QaaP ) ,
+    qaax( QaaI , QaaX ) ,
+    qaay( QaaJ , QaaY ) ,
+    qaag( QaaL , QaaS , QaaG ) ,
+    qaav( QaaX , QaaV ) ,
+    qaad( QaaG , QaaV , QaaD ) ,
+    qabq( QaaP , QaaX , QabQ ) ,
+    qabh( QaaS , QaaY , QabH ) ,
+    qabc( QabH , QabQ , QabC ) ,
+    qabb( QabC , QaaD , QabB ) .
