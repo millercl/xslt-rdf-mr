@@ -470,3 +470,7 @@ qab( LRI , QabB ) :-
     qabh( QaaS , QaaY , QabH ) ,
     qabc( QabH , QabQ , QabC ) ,
     qabb( QabC , QaaD , QabB ) .
+
+:- rdf_register_prefix( qka, 'http://id.loc.gov/vocabulary/iso639-1' ) .
+:- rdf_register_prefix( qua, 'http://www.loc.gov/mads/rdf/v1#' ) .
+:- rdf_register_prefix( quy, 'http://www.w3.org/2004/02/skos/core#' ) .
