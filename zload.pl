@@ -474,3 +474,12 @@ qab( LRI , QabB ) :-
 :- rdf_register_prefix( qka, 'http://id.loc.gov/vocabulary/iso639-1' ) .
 :- rdf_register_prefix( qua, 'http://www.loc.gov/mads/rdf/v1#' ) .
 :- rdf_register_prefix( quy, 'http://www.w3.org/2004/02/skos/core#' ) .
+qka :-
+    rdf_retractall( qka:'' , rdf:type , qua:'MADSScheme' ) ,
+    bagof( XS , rdf_subject( XS ) , XL ) ,
+    partition( qkas , XL , QS , _S ) ,
+    true .
+qkas( QS ) :- \+ rdf_equal( QS , rdf:subject ) .
+qkap( QP ) :- \+ rdf_equal( QP , rdf:predicate ) .
+qkar( QS ) :- rdf_assert_bag( rdf:subject , QS ) .
+qkao( QP ) :- rdf_assert_bag( rdf:predicate , QP ) .
