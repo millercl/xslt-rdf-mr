@@ -485,4 +485,4 @@ qkap( QP ) :- \+ rdf_equal( QP , rdf:predicate ) .
 qkar( QS ) :- rdf_assert_bag( rdf:subject , QS ) .
 qkao( QP ) :- rdf_assert_bag( rdf:predicate , QP ) .
 qkad --> "|" .
-qkab( [ QB ] ) --> blanks , [ QB ] , blanks .
+qkab( [ QB ] ) --> blanks , nonblanks(QB) , blanks .
