@@ -476,6 +476,7 @@ qab( LRI , QabB ) :-
 :- rdf_register_prefix( quy, 'http://www.w3.org/2004/02/skos/core#' ) .
 qka :-
     rdf_retractall( qka:'' , rdf:type , qua:'MADSScheme' ) ,
+    rdf_retractall( qka:'' , qua:hasTopMemberOfMADSScheme, _O ) ,
     bagof( XS , rdf_subject( XS ) , XL ) ,
     partition( qkas , XL , QS , _S ) ,
     true .
@@ -483,3 +484,4 @@ qkas( QS ) :- \+ rdf_equal( QS , rdf:subject ) .
 qkap( QP ) :- \+ rdf_equal( QP , rdf:predicate ) .
 qkar( QS ) :- rdf_assert_bag( rdf:subject , QS ) .
 qkao( QP ) :- rdf_assert_bag( rdf:predicate , QP ) .
+qkad --> "|" .
