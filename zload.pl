@@ -485,6 +485,6 @@ qkap( QP ) :- \+ rdf_equal( QP , rdf:predicate ) .
 qkar( QS ) :- rdf_assert_bag( rdf:subject , QS ) .
 qkao( QP ) :- rdf_assert_bag( rdf:predicate , QP ) .
 qkad --> "|" .
-qkab( [ QB ] ) --> blanks , nonblanks(QB) , blanks .
-qkac( [QH|QT] ) --> string( QH ) , qkad , qkac( QT ) , ! .
-qkac( [QC] ) -->  string( QC ) , eos , ! .
+qkab( QB ) --> blanks , nonblanks(QB) , blanks .
+qkac( [ QH | QT ] ) --> string( XH ) , { phrase(qkab(QH),XH) } , qkad , qkac( QT ) , ! .
+qkac( [QC] ) -->  qkab( QC ) , eos , ! .
