@@ -486,3 +486,5 @@ qkar( QS ) :- rdf_assert_bag( rdf:subject , QS ) .
 qkao( QP ) :- rdf_assert_bag( rdf:predicate , QP ) .
 qkad --> "|" .
 qkab( [ QB ] ) --> blanks , nonblanks(QB) , blanks .
+qkac( [QH|QT] ) --> string( QH ) , qkad , qkac( QT ) , ! .
+qkac( [QC] ) -->  string( QC ) , eos , ! .
