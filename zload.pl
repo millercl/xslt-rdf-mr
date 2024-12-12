@@ -488,3 +488,7 @@ qkad --> "|" .
 qkab( QB ) --> blanks , nonblanks(QB) , blanks .
 qkac( [ QH | QT ] ) --> string( XH ) , { phrase(qkab(QH),XH) } , qkad , qkac( QT ) , ! .
 qkac( [QC] ) -->  qkab( QC ) , eos , ! .
+qkay( QO, XA ) :-
+    string_codes( QO , XL ) ,
+    phrase( qkac( XC ) , XL ) ,
+    maplist( string_codes , XA , XC ) .
