@@ -492,3 +492,7 @@ qkay( QO, XA ) :-
     string_codes( QO , XL ) ,
     phrase( qkac( XC ) , XL ) ,
     maplist( string_codes , XA , XC ) .
+qkaw( QO , XX ) :-
+    qkay( QO , XS ) ,
+    member( XX , XS ) ,
+    \+ re_match( "[[:alnum:]]" , XX ) .
