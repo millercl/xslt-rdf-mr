@@ -499,7 +499,60 @@ qkaw( QO , XX ) :-
 
 
 qova( QS , QG ) :-
-    rdf( QS , rdf:type , rdf:'Statement' , QG ) ,
-    rdf( QS , rdf:subject , _XS , QG ) ,
-    rdf( QS , rdf:predicate , _XP , QG ) ,
-    rdf( QS , rdf:object , _XO , QG ) .
+    rdf( QS , rdf:type , rdf:'Statement' , QG ) .
+qovb( QG , XL ) :-
+    bagof( QS , qova( QS , QG ) , XL ) .
+qovt216( QN , QT , QG ) :-
+    rdf( QN , rdf:type , rdf:'Statement' , QG ) ,
+    rdf( QN , rdf:subject , XS , QG ) ,
+    rdf( QN , rdf:predicate , XP , QG ) ,
+    rdf( QN , rdf:object , XO@QT , QG ) ,
+    string_chars( XO , XK ) ,
+    phrase( hexrgb( XR , XG , XB ) , XK ) ,
+    XR = XB ,
+    XG = XB ,
+    XG >= 216 ,
+    rdf_assert( XS , XP , "#ffffff"@QT , QN ) .
+qovt216( QN , QT , QG ) :-
+    rdf( QN , rdf:type , rdf:'Statement' , QG ) ,
+    rdf( QN , rdf:subject , XS , QG ) ,
+    rdf( QN , rdf:predicate , XP , QG ) ,
+    rdf( QN , rdf:object , XO@QT , QG ) ,
+    string_chars( XO , XK ) ,
+    phrase( hexrgb( XR , XG , XB ) , XK ) ,
+    XR = XB ,
+    XG = XB ,
+    XG < 216 ,
+    rdf_assert( XS , XP , "#000000"@QT , QN ) .
+qovc( QT , QG ) :-
+    once( foreach( qova( QN , QG ) , qovt216( QN , QT , QG ) ) ) .
+qovd( XS , XP , QT , QG ) :-
+    rdf( XS , XP , _XO@QT , QG ) ,
+    rdfs_container_membership_property( XS ) ,
+    rdfs_container_membership_property( XP ) .
+qove( QS , QP , QT , QG ) :-
+    rdf_retractall( QS , QP , _XO@QT , QG ) .
+qovf( QT , QG ) :-
+    foreach( qovd( XS, XP , QT , QG ) , qove( XS , XP , QT , QG ) ) .
+qovg( QS , QT , QG ) :-
+    rdf_retractall( QS , rdf:object , _XO@QT , QG ) ,
+    rdf_retractall( QS , rdf:predicate , _XP , QG ) ,
+    rdf_retractall( QS , rdf:subject , _XS , QG ) ,
+    rdf_retractall( QS , rdf:type , rdf:'Statement' ) .
+qovh( QT , QG ) :-
+    foreach( qova( XS , QG ) , qovg( XS , QT , QG ) ) .
+qovi( QT , QN , QD ) :-
+    rdf( XS , XP , XO@QT , QN ) ,
+    rdf_assert( XS , XP , XO@QT , QD ) .
+qovj( QT , QD ) :-
+    foreach( qova( XS , QD ) , qovi( QT , XS , QD ) ) .
+qovk( QN ) :-
+    rdf_retractall( _S , _P , _O , QN ) .
+qovl( QD ) :-
+    foreach( qova( XS , QD ) , qovk( XS ) ) .
+qovm( QT , QG ) :-
+    qovc( QT , QG ) ,
+    qovf( QT , QG ) ,
+    qovj( QT , QG ) ,
+    qovl( QG ) ,
+    qovh( QT , QG ) .
