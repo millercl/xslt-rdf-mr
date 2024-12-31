@@ -496,3 +496,10 @@ qkaw( QO , XX ) :-
     qkay( QO , XS ) ,
     member( XX , XS ) ,
     \+ re_match( "[[:alnum:]]" , XX ) .
+
+
+qova( QS , QG ) :-
+    rdf( QS , rdf:type , rdf:'Statement' , QG ) ,
+    rdf( QS , rdf:subject , _XS , QG ) ,
+    rdf( QS , rdf:predicate , _XP , QG ) ,
+    rdf( QS , rdf:object , _XO , QG ) .
