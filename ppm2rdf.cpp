@@ -11,6 +11,7 @@ std::string a="\
  <!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#'>\n\
  ]>\n\
 <RDF xmlns=\"&rdf;\" xmlns:tiff=\"&tiff;\" xml:lang=\"";
+bool q=true;
 std::string c="zxx";
 std::string d="\" >\n";
 int l=1;
@@ -25,13 +26,19 @@ int y=1;
 bool t=true;
 int z=255;
 std::string line;
+std::string u="zzx";
 
 int main(int argc, char **argv) {
- if(argc>=2){
-  c=argv[1];
+ std::istringstream isr = std::istringstream(argv[1]);
+ isr >> u;
+ if(u=="-"){
+  q=false;
  }
- if(argc==3){
-  std::istringstream iss = std::istringstream(argv[2]);
+ if(argc>=3){
+  c=argv[2];
+ }
+ if(argc==4){
+  std::istringstream iss = std::istringstream(argv[3]);
   iss >> z;
   t=false;
  }
@@ -69,7 +76,15 @@ int main(int argc, char **argv) {
    if(m==2) {
     if(t||(r==255&&g==0&&b>=z)){
      std::cout << " <Description about=\"&rdf;_" << x << "\" > ";
-     std::cout << "<_" << y << " >#" ;
+     std::cout << "<_" << y ;
+     if(q){
+      std::cout << " ID=\"" ;
+      std::cout << u.substr(0,u.length()-1) ;
+      std::cout << x ;
+      std::cout << u.at(u.length()-1) ;
+      std::cout << y << "\"" ;
+     }
+     std::cout << " >#" ;
      printf("%02x",r) ;
      printf("%02x",g) ;
      printf("%02x",b) ;
