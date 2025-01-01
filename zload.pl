@@ -556,3 +556,21 @@ qovm( QT , QG ) :-
     qovj( QT , QG ) ,
     qovl( QG ) ,
     qovh( QT , QG ) .
+
+qisa( ZXX , _939 , QS , QP ) :-
+    rdf( QS , QP , _QO@ZXX ) ,
+    rdfs_container_membership_property( QS ) ,
+    rdfs_container_membership_property( QP ) ,
+    \+ rdf( QS , QP , _XO@_939 ) .
+qisb( ZXX , _939 ) :-
+    foreach(
+        qisa( ZXX , _939 , QS , QP ) ,
+        rdf_retractall( QS , QP , _QO@ZXX )
+    ).
+qisc( _939 ) :-
+    rdf_retractall( _XS , _XP , _XO@_939 ) .
+qisd :-
+    load( "j239367.xml" ) ,
+    load( "qis-939-x-ff0000.xml" ) ,
+    qisb( zxx , '939' ) ,
+    qisc( '939' ) .
