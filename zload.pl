@@ -574,3 +574,17 @@ qisd :-
     load( "qis-939-x-ff0000.xml" ) ,
     qisb( zxx , '939' ) ,
     qisc( '939' ) .
+qise( XR , XG , XB ) :-
+    rdf( _XS , _XP , XO@zxx ) ,
+    string_chars( XO , XK ) ,
+    phrase( hexrgb( XR , XG , XB ) , XK ) .
+qisf( QNR , QNG , QNB , QXR, QXG, QXB ) :-
+    findall( XR , qise( XR , XG , XB ) , XXR ) ,
+    findall( XG , qise( XR , XG , XB ) , XXG ) ,
+    findall( XB , qise( XR , XG , XB ) , XXB ) ,
+    min_list( XXR , QNR ) ,
+    min_list( XXG , QNG ) ,
+    min_list( XXB , QNB ) ,
+    max_list( XXR , QXR ) ,
+    max_list( XXG , QXG ) ,
+    max_list( XXB , QXB ) .
