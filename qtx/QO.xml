@@ -1,0 +1,11 @@
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xml:lang="zxx">
+ <Description about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"> <_1>#ffffff</_1> </Description>
+ <Description about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"> <_1>#ffffff</_1> </Description>
+ <Description about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"> <_1>#000000</_1> </Description>
+ <Description about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"> <_2>#ffffff</_2> </Description>
+ <Description about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"> <_2>#ffffff</_2> </Description>
+ <Description about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"> <_2>#000000</_2> </Description>
+ <Description about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"> <_3>#ffffff</_3> </Description>
+ <Description about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"> <_3>#000000</_3> </Description>
+ <Description about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"> <_3>#ffffff</_3> </Description>
+</RDF>
