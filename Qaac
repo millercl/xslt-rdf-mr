@@ -1,0 +1,5 @@
+#!/bin/bash
+XH=`sha256sum $1 |
+awk '{print $1}' |
+tr [:lower:] [:upper:]`
+echo "ibase=16;$XH%3E8" | bc
