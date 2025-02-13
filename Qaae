@@ -1,0 +1,11 @@
+#!/usr/bin/awk -f
+NR==1 {
+ print $0
+ print "#"
+}
+NR<4 && NR>1 { print $0 }
+NR>3 {
+ gsub(/ $/,"")
+ gsub(/ /,"\n")
+ print $0
+}
