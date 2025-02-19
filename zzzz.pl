@@ -621,3 +621,10 @@ qpak( XS , XP , XT , XD , XQ ) :-
     rdf( XS , XP , QO@XT , XD ) ,
     rdf_assert( XS , XP , QO@XT , XQ ) ,
     rdf_retractall( XS , XP , QO@XT , XD ) .
+qpal( XT , XQ , QZ ) :-
+    findall(
+        xo( XXS , XXP ) ,
+        ( rdf( XS , XP , _XO@XT , XQ ) ,
+          rdfs_container_membership_property( XS , XXS ) ,
+          rdfs_container_membership_property( XP , XXP ) ) ,
+        QZ ) .
