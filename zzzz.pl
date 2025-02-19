@@ -588,3 +588,36 @@ qisf( QNR , QNG , QNB , QXR, QXG, QXB ) :-
     max_list( XXR , QXR ) ,
     max_list( XXG , QXG ) ,
     max_list( XXB , QXB ) .
+
+qpad( XT , XD ) :-
+    once( rdf( QS , QP , QO@XT , XD ) ) ,
+    uuid( XB , [] ) ,
+    rdf_assert( QS , QP , QO@XT , XB ) ,
+    rdf_retractall( QS , QP , QO@XT , XD ) .
+qpae( XD , QQ ) :-
+    findall(
+        XNG ,
+        ( rdf( _QS , _QP , _QO , XNG ) ,
+          \+ rdf_equal( XNG , XD ) ) ,
+        QQ ) .
+qpah( XSN, XPN, XT, XD , QS , QP ) :-
+    rdf( QS , QP , _QO@XT , XD ) ,
+    rdfs_container_membership_property( QS , QSN ) ,
+    rdfs_container_membership_property( QP , QPN ) ,
+    QSN < XSN + 2 ,
+    QSN > XSN - 2 ,
+    QPN < XPN + 2 ,
+    QPN > XPN - 2 .
+qpai( XSN, XPN, XT, XD , QOO) :-
+    findall(
+        qo( QS , QP ) ,
+        qpah( XSN, XPN, XT, XD , QS , QP ) ,
+        QOO ) .
+qpaj( XT, XD, XQO , XQ ) :-
+    foreach(
+        member( qo( XXS , XXP ) , XQO ) ,
+        qpak( XXS , XXP , XT , XD , XQ ) ) .
+qpak( XS , XP , XT , XD , XQ ) :-
+    rdf( XS , XP , QO@XT , XD ) ,
+    rdf_assert( XS , XP , QO@XT , XQ ) ,
+    rdf_retractall( XS , XP , QO@XT , XD ) .
