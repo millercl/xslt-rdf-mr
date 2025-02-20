@@ -635,3 +635,8 @@ qpam( XT , XD , XQ , XZ , QOA ) :-
           qpai( XXS, XXP, XT, XD, QOO ) ,
           qpaj( XT, XD, QOO, XQ ) ) ,
         QOA ) .
+qpan( QOA , QOI ) :-
+    partition( qpao, QOA, QOI, _QOO ) .
+qpao( qoa(xo(_QS,_QP),XN) ) :-
+    length(XN,QN) ,
+    QN > 0 .
