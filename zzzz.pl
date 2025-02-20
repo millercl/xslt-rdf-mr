@@ -628,3 +628,10 @@ qpal( XT , XQ , QZ ) :-
           rdfs_container_membership_property( XS , XXS ) ,
           rdfs_container_membership_property( XP , XXP ) ) ,
         QZ ) .
+qpam( XT , XD , XQ , XZ , QOA ) :-
+    setof(
+        qoa( xo(XXS,XXP) , QOO ) ,
+        ( member(xo(XXS,XXP),XZ) ,
+          qpai( XXS, XXP, XT, XD, QOO ) ,
+          qpaj( XT, XD, QOO, XQ ) ) ,
+        QOA ) .
