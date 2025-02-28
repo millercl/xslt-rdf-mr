@@ -16,7 +16,7 @@ load( File ) :-
 main( [] ) :-
     load( "o.xml" ) .
 
-:- initialization( main, main ) .
+%:- initialization( main, main ) .
 
 hexrgb( R , G , B ) -->
     { var( R ) } , % type safety determines direction:
@@ -478,7 +478,7 @@ qka :-
     rdf_retractall( qka:'' , rdf:type , qua:'MADSScheme' ) ,
     rdf_retractall( qka:'' , qua:hasTopMemberOfMADSScheme, _O ) ,
     bagof( XS , rdf_subject( XS ) , XL ) ,
-    partition( qkas , XL , QS , _S ) ,
+    partition( qkas , XL , _QS , _S ) ,
     true .
 qkas( QS ) :- \+ rdf_equal( QS , rdf:subject ) .
 qkap( QP ) :- \+ rdf_equal( QP , rdf:predicate ) .
