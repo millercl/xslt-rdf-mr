@@ -81,22 +81,28 @@ update(X,Y,RR,GG,BB,T) :-
     rdf_retractall( S , P , LB@T ) ,
     rdf_assert( S , P , LN@qtc ) .
 
-% generate alternatives for rdf coordinates in order .
-% left to right, top to bottom .
-lrtb( X , Y , T ) :-
-    findall( Y , ( rdf_predicate( P ) , rdfs_container_membership_property( P , Y ) ) , BY ) ,
-    max_list( BY , MY ) , % list of actual axis coordinates BY is potentially unordered.
-    findall( X , ( rdf_subject( S ) , rdfs_container_membership_property( S , X ) ) , BX ) ,
-    max_list( BX , MX ) , % likewise with BX, take only the maximum for between/3.
-    between( 1, MY, Y ) , % the x/y order is sigificant to sorting.
-    between( 1, MX, X ) ,
-    rdfs_container_membership_property( P , Y ) ,
-    rdfs_container_membership_property( S , X ) ,
-    rdf( S , P , _O@T ) .
+qzba( XX , XY ) :- qzba( XX , XY , zxx ) .
+qzba( XX , XY , XT ) :- qzba( XX , XY , XT , _XG ) .
+qzba( XX , XY , XT , XG ) :-
+    findall( XY ,
+             ( rdf( _XXS , QP , _XXO , XG ) ,
+               rdfs_container_membership_property( QP , XY ) ) ,
+             QY ) ,
+    max_list( QY , QYZ ) ,
+    findall( XX ,
+             ( rdf( QS , _QQP , _QQO , XG ) ,
+               rdfs_container_membership_property( QS , XX ) ) ,
+             QX ) ,
+    max_list( QX , QXZ ) ,
+    between( 1, QYZ, XY ) ,
+    between( 1, QXZ, XX ) ,
+    rdfs_container_membership_property( QP , XY ) ,
+    rdfs_container_membership_property( QS , XX ) ,
+    rdf( QS , QP , _QO@XT , XG ) .
 
-% collect the ordered alternative from lrtb/3.
+% collect the ordered alternative from qzba/3.
 coor( L, T ) :- % the term rewrite 'o(x,y)' is for legibity ;
-    findall( o(X,Y) , lrtb( X, Y, T ) , L ) . % but it will also pass to re/3 .
+    findall( o(X,Y) , qzba( X, Y, T ) , L ) . % but it will also pass to re/3 .
 
 attributes_svg -->
     { rdf( _, tiff:'ImageLength', MY^^xsd:int ) ,
