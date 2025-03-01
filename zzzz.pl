@@ -104,6 +104,18 @@ qzba( XX , XY , XT , XG ) :-
 coor( L, T ) :- % the term rewrite 'o(x,y)' is for legibity ;
     findall( o(X,Y) , qzba( X, Y, T ) , L ) . % but it will also pass to re/3 .
 
+qzbb( XT , XG , XS ) :-
+    findall(
+        element( xo , [ qx=QX , qy=QY ] , [] ) ,
+        qzba( QX , QY , XT , XG ) ,
+        QS ) ,
+    XS = [ element( qzbb , [] , QS ) ] .
+qzbb( XT , XG , XS , ZZ ) :-
+    qzbb( XT , XG , XS ) ,
+    open( ZZ , write , ZZZ ) ,
+    xml_write( ZZZ , XS , [] ) ,
+    close( ZZZ ) .
+
 attributes_svg -->
     { rdf( _, tiff:'ImageLength', MY^^xsd:int ) ,
       rdf( _, tiff:'ImageWidth', MX^^xsd:int ) ,
