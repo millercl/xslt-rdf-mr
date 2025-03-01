@@ -115,6 +115,18 @@ qzbb( XT , XG , XS , ZZ ) :-
     open( ZZ , write , ZZZ ) ,
     xml_write( ZZZ , XS , [] ) ,
     close( ZZZ ) .
+qzac( AA , ZZ ) :-
+    integer( AA ) ,
+    ! ,
+    format( atom( ZZ ) , '~|~`0t~d~6|' , AA ) .
+qzac( AA , ZZ ) :-
+    atom( AA ) ,
+    ! ,
+    ZZ = AA .
+qzac( AA , ZZ ) :-
+    string( AA ) ,
+    ! ,
+    atom_string( ZZ , AA ) .
 
 :- rdf_meta rdfs_cmp( r, ? ) .
 rdfs_cmp( QR , XN ) :- rdfs_container_membership_property( QR , XN ) .
