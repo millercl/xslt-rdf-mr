@@ -116,6 +116,9 @@ qzbb( XT , XG , XS , ZZ ) :-
     xml_write( ZZZ , XS , [] ) ,
     close( ZZZ ) .
 
+:- rdf_meta rdfs_cmp( r, ? ) .
+rdfs_cmp( QR , XN ) :- rdfs_container_membership_property( QR , XN ) .
+
 attributes_svg -->
     { rdf( _, tiff:'ImageLength', MY^^xsd:int ) ,
       rdf( _, tiff:'ImageWidth', MX^^xsd:int ) ,
