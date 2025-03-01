@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE rdf:RDF [
+ <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+ <!ENTITY tiff 'http://ns.adobe.com/tiff/1.0/'>
+ <!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#'>
+ ]>
+<RDF xmlns='&rdf;' xmlns:tiff='&tiff;' xml:lang='zxx' >
+ <Description about='' > <tiff:ImageWidth datatype='&xsd;int' >3</tiff:ImageWidth> </Description>
+ <Description about='' > <tiff:ImageLength datatype='&xsd;int' >3</tiff:ImageLength> </Description>
+ <Description about='&rdf;_1' > <_1 ID='aa1x1' >#ffffff</_1> </Description>
+ <Description about='&rdf;_2' > <_1 ID='aa2x1' >#ffffff</_1> </Description>
+ <Description about='&rdf;_3' > <_1 ID='aa3x1' >#000000</_1> </Description>
+ <Description about='&rdf;_1' > <_2 ID='aa1x2' >#ffffff</_2> </Description>
+ <Description about='&rdf;_2' > <_2 ID='aa2x2' >#ffffff</_2> </Description>
+ <Description about='&rdf;_3' > <_2 ID='aa3x2' >#000000</_2> </Description>
+ <Description about='&rdf;_1' > <_3 ID='aa1x3' >#ffffff</_3> </Description>
+ <Description about='&rdf;_2' > <_3 ID='aa2x3' >#000000</_3> </Description>
+ <Description about='&rdf;_3' > <_3 ID='aa3x3' >#ffffff</_3> </Description>
+</RDF>
