@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+]>
+
+<rdf:RDF
+    xmlns:rdf="&rdf;"
+>
+<rdf:Seq rdf:about="aa">
+  <rdf:_1 rdf:resource="953792#aa1x1"/>
+  <rdf:_2 rdf:resource="953792#aa2x1"/>
+  <rdf:_3 rdf:resource="953792#aa3x1"/>
+  <rdf:_4 rdf:resource="953792#aa1x2"/>
+  <rdf:_5 rdf:resource="953792#aa2x2"/>
+  <rdf:_6 rdf:resource="953792#aa3x2"/>
+  <rdf:_7 rdf:resource="953792#aa1x3"/>
+  <rdf:_8 rdf:resource="953792#aa2x3"/>
+  <rdf:_9 rdf:resource="953792#aa3x3"/>
+</rdf:Seq>
+
+</rdf:RDF>

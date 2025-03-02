@@ -146,6 +146,9 @@ qzbb( XT , XG , XS , ZZ ) :-
     open( ZZ , write , ZZZ ) ,
     xml_write( ZZZ , XS , [] ) ,
     close( ZZZ ) .
+qzcb( XT , XGS , QTG ) :-
+    findall( XQ , qzca( XQ , XT , XGS ) , QQ ) ,
+    rdf_assert_seq( QTG , QQ , QTG ) .
 qzav( AA , ZZ ) :-
     integer( AA ) , ! , format( atom( ZZ ) , '~|~`0t~d~6|' , AA ) .
 qzav( AA , ZZ ) :-
