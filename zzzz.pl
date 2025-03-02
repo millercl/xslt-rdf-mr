@@ -84,13 +84,15 @@ update(X,Y,RR,GG,BB,T) :-
 qzba( XX , XY ) :- qzba( XX , XY , zxx ) .
 qzba( XX , XY , XT ) :- qzba( XX , XY , XT , _XG ) .
 qzba( XX , XY , XT , XG ) :-
+    qzad( XT , QXT ) ,
+    qzac( XG , QXG ) ,
     findall( XY ,
-             ( rdf( _XXS , QP , _XXO , XG ) ,
+             ( rdf( _XXS , QP , _XXO , QXG ) ,
                rdfs_container_membership_property( QP , XY ) ) ,
              QY ) ,
     max_list( QY , QYZ ) ,
     findall( XX ,
-             ( rdf( QS , _QQP , _QQO , XG ) ,
+             ( rdf( QS , _QQP , _QQO , QXG ) ,
                rdfs_container_membership_property( QS , XX ) ) ,
              QX ) ,
     max_list( QX , QXZ ) ,
@@ -98,16 +100,18 @@ qzba( XX , XY , XT , XG ) :-
     between( 1, QXZ, XX ) ,
     rdfs_container_membership_property( QP , XY ) ,
     rdfs_container_membership_property( QS , XX ) ,
-    rdf( QS , QP , _QO@XT , XG ) .
+    rdf( QS , QP , _QO@QXT , QXG ) .
 
 % collect the ordered alternative from qzba/3.
 coor( L, T ) :- % the term rewrite 'o(x,y)' is for legibity ;
     findall( o(X,Y) , qzba( X, Y, T ) , L ) . % but it will also pass to re/3 .
 
 qzbb( XT , XG , XS ) :-
+    qzad( XT , QXT ) ,
+    qzac( XG , QXG ) ,
     findall(
         element( xo , [ qx=QX , qy=QY ] , [] ) ,
-        qzba( QX , QY , XT , XG ) ,
+        qzba( QX , QY , QXT , QXG ) ,
         QS ) ,
     XS = [ element( qzbb , [] , QS ) ] .
 qzbb( XT , XG , XS , ZZ ) :-
@@ -121,12 +125,16 @@ qzac( AA , ZZ ) :-
     atom( AA ) , ! , ZZ = AA .
 qzac( AA , ZZ ) :-
     string( AA ) , ! , atom_string( ZZ , AA ) .
+qzac( AA , ZZ ) :-
+    var( AA ) , ! , ZZ = AA .
 qzad( AA , ZZ ) :-
     integer( AA ) , ! , format( atom( ZZ ) , '~|~`0t~d~3|' , AA ) .
 qzad( AA , ZZ ) :-
     atom( AA ) , ! , ZZ = AA .
 qzad( AA , ZZ ) :-
     string( AA ) , ! , atom_string( ZZ , AA ) .
+qzad( AA , ZZ ) :-
+    var( AA ) , ! , ZZ = AA .
 
 :- rdf_meta rdfs_cmp( r, ? ) .
 rdfs_cmp( QR , XN ) :- rdfs_container_membership_property( QR , XN ) .
