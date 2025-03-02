@@ -5,8 +5,12 @@
 :- use_module( library( semweb/rdf11_containers ) ) .
 :- use_module( library( semweb/rdf_portray ) ) .
 :- use_module( library( semweb/rdf_zlib_plugin ) ) .
+:- use_module( library( apply ) ) . % for maplist/3
+:- use_module( library( sgml ) ) . % for xml_write/3
 :- rdf_portray_as( prefix:id ) .
 :- rdf_register_prefix( tiff, 'http://ns.adobe.com/tiff/1.0/' ) .
+:- rdf_meta rdfs_cmp( r, ? ) .
+rdfs_cmp( QR , XN ) :- rdfs_container_membership_property( QR , XN ) .
 
 load( File ) :-
     file_base_name( File, Basename ) ,
@@ -136,9 +140,6 @@ qzam( AA , ZZ ) :-
 qzam( AA , ZZ ) :-
     var( AA ) , ! , ZZ = AA .
 
-:- rdf_meta rdfs_cmp( r, ? ) .
-rdfs_cmp( QR , XN ) :- rdfs_container_membership_property( QR , XN ) .
-
 attributes_svg -->
     { rdf( _, tiff:'ImageLength', MY^^xsd:int ) ,
       rdf( _, tiff:'ImageWidth', MX^^xsd:int ) ,
@@ -150,8 +151,6 @@ attributes_svg -->
       width='100%' ,
       style="background-image: linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(135deg, #ccc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(135deg, transparent 75%, #ccc 75%);background-size: 24px 24px;background-position: 0 0, 12px 0, 12px -12px, 0px 12px;" ,
       xmlns='http://www.w3.org/2000/svg' ] .
-
-:- use_module( library( apply ) ) . % for maplist/3
 
 % rewrite a single coordinate term as a svg:rect element .
 % coordinate(x,y) |-> element( rect , [x,y,...] , [sub-elements] ) .
@@ -181,7 +180,6 @@ element_svg( T ) -->
       phrase( rect( T ) , E ) } ,
     [ element( svg , A , E ) ] . % this list is xml_write/3 format .
 
-:- use_module(library(sgml)). % for xml_write/3 .
 svg( T, Filename ) :-
     open( Filename , write , Stream ) ,
     phrase( element_svg( T ) , D ) ,
