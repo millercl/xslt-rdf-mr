@@ -128,6 +128,26 @@ qzca( XQ , XT , XG ) :-
     rdf( XQ , rdf:subject , QS , QXG ) ,
     rdf( XQ , rdf:predicate , QP , QXG ) ,
     rdf( XQ , rdf:object , _QO@QXT , QXG ) .
+qzda( QXZ , QYZ , XG ) :-
+    qztf( QXZ , QYZ , XG ) , ! .
+qzda( QXZ , QYZ , XG ) :-
+    qzav( XG , QXG ) ,
+    findall( XY ,
+             ( rdf( _XXQ , rdf:predicate , QP , QXG ) ,
+               rdfs_container_membership_property( QP , XY ) ) ,
+             QY ) ,
+    sort( QY , QYA ) ,
+    reverse( QYA , [ QYZ | _QTY ] ) ,
+    findall( XX ,
+             ( rdf( _QXQ , rdf:subject , QS , QXG ) ,
+               rdfs_container_membership_property( QS , XX ) ) ,
+             QX ) ,
+    sort( QX , QXA ) ,
+    reverse( QXA , [ QXZ | _QTX ] ) .
+qztf( QXZ , QYZ , XG ) :-
+    qzav( XG , QXG ) ,
+    rdf( _, tiff:'ImageLength', QYZ^^xsd:int , QXG ) ,
+    rdf( _, tiff:'ImageWidth', QXZ^^xsd:int , QXG ) .
 
 % collect the ordered alternative from qzba/3.
 coor( L, T ) :- % the term rewrite 'o(x,y)' is for legibity ;
