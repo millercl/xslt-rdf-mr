@@ -105,6 +105,8 @@ qzba( XX , XY , XT , XG ) :-
     rdfs_container_membership_property( QP , XY ) ,
     rdfs_container_membership_property( QS , XX ) ,
     rdf( QS , QP , _QO@QXT , QXG ) .
+qzca( XQ ) :- qzca( XQ , zxx , _XG ) .
+qzca( XQ , XT ) :- qzca( XQ , XT , _XG ) .
 qzca( XQ , XT , XG ) :-
     qzam( XT , QXT ) ,
     qzav( XG , QXG ) ,
