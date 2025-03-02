@@ -105,6 +105,27 @@ qzba( XX , XY , XT , XG ) :-
     rdfs_container_membership_property( QP , XY ) ,
     rdfs_container_membership_property( QS , XX ) ,
     rdf( QS , QP , _QO@QXT , QXG ) .
+qzca( XQ , XT , XG ) :-
+    qzam( XT , QXT ) ,
+    qzav( XG , QXG ) ,
+    findall( XY ,
+             ( rdf( _XXS , QP , _XXO , QXG ) ,
+               rdfs_container_membership_property( QP , XY ) ) ,
+             QY ) ,
+    max_list( QY , QYZ ) ,
+    findall( XX ,
+             ( rdf( QS , _QQP , _QQO , QXG ) ,
+               rdfs_container_membership_property( QS , XX ) ) ,
+             QX ) ,
+    max_list( QX , QXZ ) ,
+    between( 1, QYZ, XY ) ,
+    between( 1, QXZ, XX ) ,
+    rdfs_container_membership_property( QP , XY ) ,
+    rdfs_container_membership_property( QS , XX ) ,
+    rdf( XQ , rdf:type , rdf:'Statement' , QXG ) ,
+    rdf( XQ , rdf:subject , QS , QXG ) ,
+    rdf( XQ , rdf:predicate , QP , QXG ) ,
+    rdf( XQ , rdf:object , _QO@QXT , QXG ) .
 
 % collect the ordered alternative from qzba/3.
 coor( L, T ) :- % the term rewrite 'o(x,y)' is for legibity ;
