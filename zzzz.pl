@@ -84,7 +84,7 @@ update(X,Y,RR,GG,BB,T) :-
 qzba( XX , XY ) :- qzba( XX , XY , zxx ) .
 qzba( XX , XY , XT ) :- qzba( XX , XY , XT , _XG ) .
 qzba( XX , XY , XT , XG ) :-
-    qzad( XT , QXT ) ,
+    qzam( XT , QXT ) ,
     qzac( XG , QXG ) ,
     findall( XY ,
              ( rdf( _XXS , QP , _XXO , QXG ) ,
@@ -107,7 +107,7 @@ coor( L, T ) :- % the term rewrite 'o(x,y)' is for legibity ;
     findall( o(X,Y) , qzba( X, Y, T ) , L ) . % but it will also pass to re/3 .
 
 qzbb( XT , XG , XS ) :-
-    qzad( XT , QXT ) ,
+    qzam( XT , QXT ) ,
     qzac( XG , QXG ) ,
     findall(
         element( xo , [ qx=QX , qy=QY ] , [] ) ,
@@ -127,13 +127,13 @@ qzac( AA , ZZ ) :-
     string( AA ) , ! , atom_string( ZZ , AA ) .
 qzac( AA , ZZ ) :-
     var( AA ) , ! , ZZ = AA .
-qzad( AA , ZZ ) :-
+qzam( AA , ZZ ) :-
     integer( AA ) , ! , format( atom( ZZ ) , '~|~`0t~d~3|' , AA ) .
-qzad( AA , ZZ ) :-
+qzam( AA , ZZ ) :-
     atom( AA ) , ! , ZZ = AA .
-qzad( AA , ZZ ) :-
+qzam( AA , ZZ ) :-
     string( AA ) , ! , atom_string( ZZ , AA ) .
-qzad( AA , ZZ ) :-
+qzam( AA , ZZ ) :-
     var( AA ) , ! , ZZ = AA .
 
 :- rdf_meta rdfs_cmp( r, ? ) .
