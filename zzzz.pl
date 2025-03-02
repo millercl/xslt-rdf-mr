@@ -85,7 +85,7 @@ qzba( XX , XY ) :- qzba( XX , XY , zxx ) .
 qzba( XX , XY , XT ) :- qzba( XX , XY , XT , _XG ) .
 qzba( XX , XY , XT , XG ) :-
     qzam( XT , QXT ) ,
-    qzac( XG , QXG ) ,
+    qzav( XG , QXG ) ,
     findall( XY ,
              ( rdf( _XXS , QP , _XXO , QXG ) ,
                rdfs_container_membership_property( QP , XY ) ) ,
@@ -108,7 +108,7 @@ coor( L, T ) :- % the term rewrite 'o(x,y)' is for legibity ;
 
 qzbb( XT , XG , XS ) :-
     qzam( XT , QXT ) ,
-    qzac( XG , QXG ) ,
+    qzav( XG , QXG ) ,
     findall(
         element( xo , [ qx=QX , qy=QY ] , [] ) ,
         qzba( QX , QY , QXT , QXG ) ,
@@ -119,13 +119,13 @@ qzbb( XT , XG , XS , ZZ ) :-
     open( ZZ , write , ZZZ ) ,
     xml_write( ZZZ , XS , [] ) ,
     close( ZZZ ) .
-qzac( AA , ZZ ) :-
+qzav( AA , ZZ ) :-
     integer( AA ) , ! , format( atom( ZZ ) , '~|~`0t~d~6|' , AA ) .
-qzac( AA , ZZ ) :-
+qzav( AA , ZZ ) :-
     atom( AA ) , ! , ZZ = AA .
-qzac( AA , ZZ ) :-
+qzav( AA , ZZ ) :-
     string( AA ) , ! , atom_string( ZZ , AA ) .
-qzac( AA , ZZ ) :-
+qzav( AA , ZZ ) :-
     var( AA ) , ! , ZZ = AA .
 qzam( AA , ZZ ) :-
     integer( AA ) , ! , format( atom( ZZ ) , '~|~`0t~d~3|' , AA ) .
