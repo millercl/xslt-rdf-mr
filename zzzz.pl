@@ -105,29 +105,17 @@ qzba( XX , XY , XT , XG ) :-
     rdfs_container_membership_property( QP , XY ) ,
     rdfs_container_membership_property( QS , XX ) ,
     rdf( QS , QP , _QO@QXT , QXG ) .
-qzca( XQ ) :- qzca( XQ , zxx , _XG ) .
-qzca( XQ , XT ) :- qzca( XQ , XT , _XG ) .
-qzca( XQ , XT , XG ) :-
-    qzam( XT , QXT ) ,
+qzca( QXZ , QYZ , XQ ) :- qzca( QXZ , QYZ , XQ , _XG ) .
+qzca( QXZ , QYZ , XQ , XG ) :-
+    number( QXZ ) ,
+    number( QYZ ) ,
     qzav( XG , QXG ) ,
-    findall( XY ,
-             ( rdf( _XXQ , rdf:predicate , QP , QXG ) ,
-               rdfs_container_membership_property( QP , XY ) ) ,
-             QY ) ,
-    max_list( QY , QYZ ) ,
-    findall( XX ,
-             ( rdf( _QXQ , rdf:subject , QS , QXG ) ,
-               rdfs_container_membership_property( QS , XX ) ) ,
-             QX ) ,
-    max_list( QX , QXZ ) ,
     between( 1, QYZ, XY ) ,
     between( 1, QXZ, XX ) ,
     rdfs_container_membership_property( QP , XY ) ,
     rdfs_container_membership_property( QS , XX ) ,
-    rdf( XQ , rdf:type , rdf:'Statement' , QXG ) ,
     rdf( XQ , rdf:subject , QS , QXG ) ,
-    rdf( XQ , rdf:predicate , QP , QXG ) ,
-    rdf( XQ , rdf:object , _QO@QXT , QXG ) .
+    rdf( XQ , rdf:predicate , QP , QXG ) .
 qzda( QXZ , QYZ , XG ) :-
     qztf( QXZ , QYZ , XG ) , ! .
 qzda( QXZ , QYZ , XG ) :-
@@ -166,8 +154,9 @@ qzbb( XT , XG , XS , ZZ ) :-
     open( ZZ , write , ZZZ ) ,
     xml_write( ZZZ , XS , [] ) ,
     close( ZZZ ) .
-qzcb( XT , XGS , QTG ) :-
-    findall( XQ , qzca( XQ , XT , XGS ) , QQ ) ,
+qzcb( XGS , QTG ) :-
+    qzda( X , Y , XGS ) ,
+    findall( XQ , qzca( X , Y , XQ , XGS ) , QQ ) ,
     rdf_assert_seq( QTG , QQ , QTG ) .
 qzav( AA , ZZ ) :-
     integer( AA ) , ! , format( atom( ZZ ) , '~|~`0t~d~6|' , AA ) .
