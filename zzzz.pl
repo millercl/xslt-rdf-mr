@@ -7,6 +7,7 @@
 :- use_module( library( semweb/rdf_zlib_plugin ) ) .
 :- use_module( library( apply ) ) . % for maplist/3
 :- use_module( library( sgml ) ) . % for xml_write/3
+:- use_module( library( xpath ) ) . % xpath_chk/3
 :- rdf_portray_as( prefix:id ) .
 :- rdf_register_prefix( tiff, 'http://ns.adobe.com/tiff/1.0/' ) .
 :- rdf_meta rdfs_cmp( r, ? ) .
@@ -17,10 +18,12 @@ load( File ) :-
     file_name_extension( Name, ".xml", Basename ) ,
     rdf_load( File, [ base_uri( Name ), silent( false ) ] ) .
 
-main( [] ) :-
-    load( "o.xml" ) .
+zz :-
+    current_prolog_flag( argv , AAV ) ,
+    nth1( 1 , AAV , qof ) ,
+    qofz( _AA ) .
 
-%:- initialization( main, main ) .
+:- initialization( zz, main ) .
 
 hexrgb( R , G , B ) -->
     { var( R ) } , % type safety determines direction:
@@ -714,3 +717,66 @@ qpan( QOA , QOI ) :-
 qpao( qoa(xo(_QS,_QP),XN) ) :-
     length(XN,QN) ,
     QN > 0 .
+
+qofa(Qtd) :-
+    load_xml("qof/qtd.xml", Qtd, [space(remove)]).
+qofb(Qtd, Qt) :-
+    xpath_chk(Qtd,
+              //tree/directory(1),
+              element(directory, _Qn, Qt)).
+qofc(element(file, [name=Qn], []), Xb) :-
+    file_name_extension(Xb, _Qx, Qn).
+qofd(Zinh) :-
+    load_xml("qof/zinh-xb.svg", Zinh, [space(remove)]).
+qofe(Zz, element(Xe, Xa, Xd), element(Xe, Xa, Qz)) :-
+    dict_create(Xo, zsym, Xa),
+    get_dict(id, Xo, Qo),
+    Qo\=qo,
+    !,
+    maplist(qofe(Zz), Xd, Qz).
+qofe(Zz, element(Xe, Xa, _Xd), element(Xe, Xa, [Zz])) :-
+    dict_create(Xo, zsym, Xa),
+    get_dict(id, Xo, Qo),
+    Qo=qo,
+    !.
+qofe(_Zz, Qm, Qm) :-
+    atom(Qm),
+    !.
+qofe(Zz, element(Xe, Xa, Xd), element(Xe, Xa, Qz)) :-
+    dict_create(Xo, zsym, Xa),
+    \+ get_dict(id, Xo, _Qo),
+    !,
+    maplist(qofe(Zz), Xd, Qz).
+qoff(Qs) :-
+    qofd([Zinh]),
+    qofe(Qs, Zinh, Qt),
+    qofh(Qs, Qp),
+    open(Qp, write, Xy),
+    xml_write(Xy, Qt, []),
+    close(Xy).
+qofg(Qs) :-
+    qofh(Qs, Xae),
+    qofi(Qs, Xze),
+    atom_concat('inkscape -o ', Xze, Xmz),
+    atom_concat(Xmz, ' ', Xoz),
+    atom_concat(Xoz, Xae, Qnk),
+    shell(Qnk).
+qofh(Qs, Qu) :-
+    atom_concat('qof/', Qs, Xd),
+    atom_concat(Xd, '.svg', Qu).
+qofi(Qs, Qu) :-
+    atom_concat('qof/', Qs, Xd),
+    atom_concat(Xd, '.pdf', Qu).
+qofj(Xc) :-
+    maplist(qofi, Xc, Xi),
+    atomics_to_string(Xi, ' ', Qr),
+    string_concat('pdfunite ', Qr, Xy),
+    string_concat(Xy, " qof/qpu.pdf", Qpu),
+    shell(Qpu).
+qofz(Xc) :-
+    qofa(Qtd),
+    qofb(Qtd, Xb),
+    maplist(qofc, Xb, Xc),
+    maplist(qoff, Xc),
+    maplist(qofg, Xc),
+    qofj(Xc).

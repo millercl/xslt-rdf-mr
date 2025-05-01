@@ -1,22 +1,33 @@
-<svg id='QOF-ZINH-XB' xmlns=
-'http://www.w3.org/2000/svg'
- width='8.5in' height='11in'
- viewBox='0 0 8.5 11'      >
-<path  id='QZ'  fill='white'
-d='M 0 0  H 8.5  V 11 H 0 Z
-M  0.6915   1.4893 H  0.17
-V  5.2146 H 0.6915 V  5.7875
-H  0.17   V 9.4956 H  0.6915
-V 10.0685 H 0.17   V 10.83
-H  8.33   V 1.0164 H  7.8085
-V  0.17   H 0.6915 Z'     />
-<style id='XC'> text { font:
-  bold  0.1527px monospace ;
-  fill: black ; }   </style>
-<text       id='QN'
-  writing-mode='vertical-lr'
-  x='8.2306' y='0'         >
-<tspan id='QO' x='8.2306'
-  letter-spacing='0.00046in'
-  y='0.2063' >903247</tspan>
-</text>               </svg>
+<svg id='qof' xmlns= 'http://www.w3.org/2000/svg' width='8.5in' height='11in' viewBox='0 0 8.5 11'>
+<path id='qz' fill='white' d='
+M  0      0
+H  8.5
+V 11
+H  0
+Z
+M  0.6915 1.4893
+H  0.17
+V  5.2146
+H  0.6915
+V  5.7875
+H  0.17
+V  9.4956
+H  0.6915
+V 10.0685
+H  0.17
+V 10.83
+H  8.33
+V  1.0164
+H  7.8085
+V  0.17
+H  0.6915
+Z'/>
+<style id='xc'>
+text {
+ font: bold 0.1527px monospace ;
+ fill: black ; }
+</style>
+<text id='qn' writing-mode='vertical-lr' x='8.2306' y='0'>
+<tspan id='qo' letter-spacing='0.00046in' x='8.2306' y='0.2063'/>
+</text>
+</svg>
